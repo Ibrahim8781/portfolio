@@ -52,19 +52,19 @@ const About = () => {
           </p>
           <div className="about-details">
             <div className="detail">
-              <a href="mailto:ibrahim@gmail.com" className="icon email-icon" aria-label="Email Ibrahim">
+              <a href="mailto:ibrahimsiddiqi12@gmail.com" className="icon email-icon" aria-label="Email Ibrahim">
                 <FaEnvelope />
               </a>
-              <span ref={emailRef} onClick={() => copyToClipboard("ibrahim@gmail.com", emailRef)}>
-                ibrahim@gmail.com
+              <span ref={emailRef} onClick={() => copyToClipboard("ibrahimsiddiqi@gmail.com", emailRef)}>
+                ibrahimsiddiqi@gmail.com
               </span>
             </div>
             <div className="detail">
-              <a href="tel:+923111111111" className="icon phone-icon" aria-label="Call Ibrahim">
+              <a href="tel:+923315146350" className="icon phone-icon" aria-label="Call Ibrahim">
                 <FaPhone />
               </a>
-              <span ref={phoneRef} onClick={() => copyToClipboard("+923111111111", phoneRef)}>
-                +(92) 311 1111111
+              <span ref={phoneRef} onClick={() => copyToClipboard("+923315146350", phoneRef)}>
+                +(92) 331 5146350
               </span>
             </div>
             <div className="detail">

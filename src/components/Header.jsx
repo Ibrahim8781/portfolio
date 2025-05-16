@@ -36,9 +36,6 @@ const Header = () => {
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="header-container">
         <div className="logo">
-          <h1>
-            Ibrahim<span>Ahmad</span>
-          </h1>
         </div>
         <div className={`menu-toggle ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
           <div className="bar"></div>

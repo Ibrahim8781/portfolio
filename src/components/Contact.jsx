@@ -82,19 +82,19 @@ const Contact = () => {
 
   const triggerEmailAction = () => {
     try {
-      window.location.href = "mailto:ibrahim@gmail.com"
+      window.location.href = "mailto:ibrahimsiddiqi12@gmail.com"
     } catch (err) {
       // Fallback: Copy to clipboard if mailto: is blocked
-      copyToClipboard("ibrahim@gmail.com", emailRef)
+      copyToClipboard("ibrahimsiddiqi12@gmail.com", emailRef)
     }
   }
 
   const triggerPhoneAction = () => {
     try {
-      window.location.href = "tel:+923111111111"
+      window.location.href = "tel:+923315146350"
     } catch (err) {
       // Fallback: Copy to clipboard if tel: is blocked
-      copyToClipboard("+923111111111", phoneRef)
+      copyToClipboard("+923315146350", phoneRef)
     }
   }
 
@@ -127,7 +127,7 @@ const Contact = () => {
             <div className="contact-item">
               <div className="contact-icon">
                 <a
-                  href="mailto:ibrahim@gmail.com"
+                  href="mailto:ibrahimsiddiqi12@gmail.com"
                   className="email-icon"
                   aria-label="Email Ibrahim"
                   onClick={(e) => {
@@ -145,14 +145,14 @@ const Contact = () => {
                   onClick={triggerEmailAction}
                   style={{ cursor: "pointer" }}
                 >
-                  ibrahim@gmail.com
+                  ibrahimsiddiqi12@gmail.com
                 </span>
               </div>
             </div>
             <div className="contact-item">
               <div className="contact-icon">
                 <a
-                  href="tel:+923111111111"
+                  href="tel:+923315146350"
                   className="phone-icon"
                   aria-label="Call Ibrahim"
                   onClick={(e) => {
@@ -170,7 +170,7 @@ const Contact = () => {
                   onClick={triggerPhoneAction}
                   style={{ cursor: "pointer" }}
                 >
-                  +(92) 311 1111111
+                  +(92) 331 5146350
                 </span>
               </div>
             </div>
