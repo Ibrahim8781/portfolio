@@ -19,7 +19,7 @@ const Projects = () => {
         "Developed responsive React frontend with weekly planner and auto-generated shopping lists",
         "Containerized app with Docker and deployed on Minikube via GitHub Actions",
       ],
-      image: "/images/meal-planner.jpg",
+      image: `${process.env.PUBLIC_URL}/images/meal-planner.jpg`,
       github: "https://github.com/im-sami/SCD-Project-Recipe",
     },
     {
@@ -33,7 +33,7 @@ const Projects = () => {
         "Documented RESTful APIs with Postman, emphasizing secure routing",
         "Designed efficient data modeling and token-based communication",
       ],
-      image: "/images/movie-recommendation-system.jpg",
+      image: `${process.env.PUBLIC_URL}/images/movie-recommendation-system.jpg`,
       github: "https://documenter.getpostman.com/view/34836347/2sB2qWFiYn",
     },
     {
@@ -47,7 +47,7 @@ const Projects = () => {
         "Collaborated in a 4-member Agile team ensuring seamless integration",
         "Implemented efficient data storage and retrieval using Pinecone vector database",
       ],
-      image: "/images/rate-my-professor.png",
+      image: `${process.env.PUBLIC_URL}/images/rate-my-professor.png`,
       github: "https://github.com/Mubeen014/Rate-my-professor-using-RAG.git",
     },
     {
@@ -61,7 +61,7 @@ const Projects = () => {
         "Used GA with crossover, mutation, and fitness scoring to improve balance",
         "Managed data through CSV I/O and compared CSP vs GA outputs",
       ],
-      image: "/images/university-timetable-scheduler.png",
+      image: `${process.env.PUBLIC_URL}/images/university-timetable-scheduler.png`,
       github: "#",
     },
     {
@@ -75,7 +75,7 @@ const Projects = () => {
         "Developed a Windows Forms interface with data binding for TA and lab management",
         "Added error handling and tested key features to ensure reliability",
       ],
-      image: "/images/teacher-lab-assistant-management.png",
+      image: `${process.env.PUBLIC_URL}/images/teacher-lab-assistant-management.png`,
       github: "#",
     },
   ]

@@ -94,6 +94,7 @@
   gap: 20px;
   animation: fadeInUp 1s ease 0.6s;
   animation-fill-mode: both;
+  flex-wrap: wrap;
 }
 
 .primary-btn,
