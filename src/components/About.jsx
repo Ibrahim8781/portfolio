@@ -30,7 +30,7 @@ const About = () => {
       <div className="about-content">
         <div className="about-image">
           <div className="image-frame">
-            <img src="/images/developer-environment.jpg" alt="Ibrahim Ahmad" />
+            <img src={`${process.env.PUBLIC_URL}/images/developer-environment.jpg`} alt="Ibrahim Ahmad" />
           </div>
         </div>
         <div className="about-text">
