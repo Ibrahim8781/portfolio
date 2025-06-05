@@ -1,22 +1,38 @@
 import "./About.css"
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from "react-icons/fa"
-import { useRef } from "react"
 
 const About = () => {
-  const emailRef = useRef(null)
-  const phoneRef = useRef(null)
+  const handleEmailClick = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    window.location.href = "mailto:ibrahimsiddiqi12@gmail.com"
+  }
 
-  const copyToClipboard = (text, ref) => {
-    navigator.clipboard.writeText(text).then(() => {
-      const span = ref.current
-      const originalText = span.textContent
-      span.textContent = "Copied!"
-      setTimeout(() => {
-        span.textContent = originalText
-      }, 2000)
-    }).catch(err => {
-      console.error("Failed to copy: ", err)
-    })
+  const handlePhoneClick = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    window.location.href = "tel:+923315146350"
+  }
+
+  // Inline styles to override any CSS issues
+  const clickableStyle = {
+    cursor: "pointer",
+    pointerEvents: "auto",
+    zIndex: 999,
+    position: "relative",
+    userSelect: "none"
+  }
+
+  const iconStyle = {
+    ...clickableStyle,
+    display: "inline-flex",
+    width: "40px",
+    height: "40px",
+    borderRadius: "50%",
+    background: "linear-gradient(to right, #6a11cb, #2575fc)",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "white"
   }
 
   return (
@@ -52,25 +68,41 @@ const About = () => {
           </p>
           <div className="about-details">
             <div className="detail">
-              <a href="mailto:ibrahimsiddiqi12@gmail.com" className="icon email-icon" aria-label="Email Ibrahim">
+              <div 
+                style={iconStyle}
+                onClick={handleEmailClick}
+                title="Click to send email"
+              >
                 <FaEnvelope />
-              </a>
-              <span ref={emailRef} onClick={() => copyToClipboard("ibrahimsiddiqi@gmail.com", emailRef)}>
-                ibrahimsiddiqi@gmail.com
+              </div>
+              <span 
+                onClick={handleEmailClick}
+                style={clickableStyle}
+                title="Click to send email"
+              >
+                ibrahimsiddiqi12@gmail.com
               </span>
             </div>
             <div className="detail">
-              <a href="tel:+923315146350" className="icon phone-icon" aria-label="Call Ibrahim">
+              <div 
+                style={iconStyle}
+                onClick={handlePhoneClick}
+                title="Click to call"
+              >
                 <FaPhone />
-              </a>
-              <span ref={phoneRef} onClick={() => copyToClipboard("+923315146350", phoneRef)}>
+              </div>
+              <span 
+                onClick={handlePhoneClick}
+                style={clickableStyle}
+                title="Click to call"
+              >
                 +(92) 331 5146350
               </span>
             </div>
             <div className="detail">
-              <span className="icon location-icon" aria-label="Location">
+              <div className="icon location-icon">
                 <FaMapMarkerAlt />
-              </span>
+              </div>
               <span>Islamabad, Pakistan</span>
             </div>
           </div>

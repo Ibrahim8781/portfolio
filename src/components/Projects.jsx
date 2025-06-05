@@ -19,7 +19,7 @@ const Projects = () => {
         "Developed responsive React frontend with weekly planner and auto-generated shopping lists",
         "Containerized app with Docker and deployed on Minikube via GitHub Actions",
       ],
-      image: `${process.env.PUBLIC_URL}/images/meal-planner.jpg`,
+      image: `${process.env.PUBLIC_URL}/images/collaborative_recipe.png`,
       github: "https://github.com/im-sami/SCD-Project-Recipe",
     },
     {
@@ -33,7 +33,7 @@ const Projects = () => {
         "Documented RESTful APIs with Postman, emphasizing secure routing",
         "Designed efficient data modeling and token-based communication",
       ],
-      image: `${process.env.PUBLIC_URL}/images/movie-recommendation-system.jpg`,
+      image: `${process.env.PUBLIC_URL}/images/movie-recommendation.png`,
       github: "https://documenter.getpostman.com/view/34836347/2sB2qWFiYn",
     },
     {
@@ -77,6 +77,20 @@ const Projects = () => {
       ],
       image: `${process.env.PUBLIC_URL}/images/teacher-lab-assistant-management.png`,
       github: "#",
+    },
+    {
+      id: 6,
+      title: "Image Moderation System",
+      description: "An image moderation system using AI to detect inappropriate content.",
+      technologies: ["Python", "FLASK", "AWS", "FAST API", "CSS"],
+      details: [
+        "Developed an image moderation system using Python and Flask",
+        "Integrated AWS Rekognition for image analysis and inappropriate content detection",
+        "Created a user-friendly interface with CSS and HTML and JavaScript",
+        "Implemented RESTful APIs with FastAPI for efficient image processing",
+      ],
+      image: `${process.env.PUBLIC_URL}/images/image-moderation.png`,
+      github: "https://github.com/Ibrahim8781/Image-Moderation-App",
     },
   ]
 

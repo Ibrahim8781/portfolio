@@ -1,9 +1,7 @@
 "use client"
-
 import { useState } from "react"
 import "./Contact.css"
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from "react-icons/fa"
-import { useRef } from "react"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,15 +10,11 @@ const Contact = () => {
     subject: "",
     message: "",
   })
-
   const [formStatus, setFormStatus] = useState({
     submitted: false,
     success: false,
     message: "",
   })
-
-  const emailRef = useRef(null)
-  const phoneRef = useRef(null)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -60,7 +54,6 @@ const Contact = () => {
         success: true,
         message: "Thank you for your message! I will get back to you soon.",
       })
-
       // Reset form after successful submission
       setFormData({
         name: "",
@@ -68,7 +61,6 @@ const Contact = () => {
         subject: "",
         message: "",
       })
-
       // Reset status after 5 seconds
       setTimeout(() => {
         setFormStatus({
@@ -80,35 +72,28 @@ const Contact = () => {
     }, 1000)
   }
 
-  const triggerEmailAction = () => {
-    try {
-      window.location.href = "mailto:ibrahimsiddiqi12@gmail.com"
-    } catch (err) {
-      // Fallback: Copy to clipboard if mailto: is blocked
-      copyToClipboard("ibrahimsiddiqi12@gmail.com", emailRef)
-    }
+  // Inline styles to override any CSS issues and maintain appearance
+  const clickableStyle = {
+    cursor: "pointer",
+    pointerEvents: "auto",
+    zIndex: 999,
+    position: "relative",
+    userSelect: "none",
+    textDecoration: "none", // Prevent underline on links
+    color: "var(--text-color)" // Match existing text color
   }
 
-  const triggerPhoneAction = () => {
-    try {
-      window.location.href = "tel:+923315146350"
-    } catch (err) {
-      // Fallback: Copy to clipboard if tel: is blocked
-      copyToClipboard("+923315146350", phoneRef)
-    }
-  }
-
-  const copyToClipboard = (text, ref) => {
-    navigator.clipboard.writeText(text).then(() => {
-      const span = ref.current
-      const originalText = span.textContent
-      span.textContent = "Copied! (mailto/tel might be blocked in this environment)"
-      setTimeout(() => {
-        span.textContent = originalText
-      }, 2000)
-    }).catch(err => {
-      console.error("Failed to copy: ", err)
-    })
+  const iconStyle = {
+    ...clickableStyle,
+    display: "inline-flex",
+    width: "45px",
+    height: "45px",
+    borderRadius: "50%",
+    background: "linear-gradient(to right, #6a11cb, #2575fc)",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "white",
+    fontSize: "1.2rem"
   }
 
   return (
@@ -125,53 +110,25 @@ const Contact = () => {
           <p>Feel free to reach out to me for any questions, opportunities, or just to say hello!</p>
           <div className="contact-details">
             <div className="contact-item">
-              <div className="contact-icon">
-                <a
-                  href="mailto:ibrahimsiddiqi12@gmail.com"
-                  className="email-icon"
-                  aria-label="Email Ibrahim"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    triggerEmailAction()
-                  }}
-                >
-                  <FaEnvelope />
-                </a>
-              </div>
+              <a href="mailto:ibrahimsiddiqi12@gmail.com" style={iconStyle} title="Click to send email">
+                <FaEnvelope />
+              </a>
               <div className="contact-text">
                 <h4>Email</h4>
-                <span
-                  ref={emailRef}
-                  onClick={triggerEmailAction}
-                  style={{ cursor: "pointer" }}
-                >
+                <a href="mailto:ibrahimsiddiqi12@gmail.com" style={clickableStyle} title="Click to send email">
                   ibrahimsiddiqi12@gmail.com
-                </span>
+                </a>
               </div>
             </div>
             <div className="contact-item">
-              <div className="contact-icon">
-                <a
-                  href="tel:+923315146350"
-                  className="phone-icon"
-                  aria-label="Call Ibrahim"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    triggerPhoneAction()
-                  }}
-                >
-                  <FaPhone />
-                </a>
-              </div>
+              <a href="tel:+923315146350" style={iconStyle} title="Click to call">
+                <FaPhone />
+              </a>
               <div className="contact-text">
                 <h4>Phone</h4>
-                <span
-                  ref={phoneRef}
-                  onClick={triggerPhoneAction}
-                  style={{ cursor: "pointer" }}
-                >
+                <a href="tel:+923315146350" style={clickableStyle} title="Click to call">
                   +(92) 331 5146350
-                </span>
+                </a>
               </div>
             </div>
             <div className="contact-item">
@@ -263,7 +220,6 @@ const Contact = () => {
             <button type="button" className="submit-btn" onClick={handleSubmit}>
               Send Message
             </button>
-
             {formStatus.submitted && (
               <div className={`form-message ${formStatus.success ? "success" : "error"}`}>
                 {formStatus.message}
@@ -271,7 +227,7 @@ const Contact = () => {
             )}
             <div className="form-note">
               <p style={{ fontSize: "0.9rem", opacity: 0.7 }}>
-                Note: If you can’t type in the form, please try refreshing the page or use the email/phone options above.
+                Note: If you can't type in the form, please try refreshing the page or use the email/phone options above.
               </p>
             </div>
           </div>

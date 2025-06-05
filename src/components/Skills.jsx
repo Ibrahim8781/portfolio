@@ -43,6 +43,10 @@ const Skills = () => {
     { name: "Python", progress: "100%" },
     { name: "AI/ML", progress: "100%" },
     { name: "NLP & RAG", progress: "100%" },
+    { name: "Docker", progress: "100%" },
+    { name: "Kubernetes", progress: "100%" },
+    { name: "Git", progress: "100%" },
+    { name: "CI/CD", progress: "100%" },
   ]
 
   const otherSkills = [
@@ -56,13 +60,19 @@ const Skills = () => {
     "CSP",
     "GA",
     "NumPy",
+    "Docker",
+    "Kubernetes",
+    "GitHub Actions",
+    "CI/CD",
+    "Agile Methodologies",
+    "Problem Solving",
   ]
 
   return (
     <section id="skills" className="skills" ref={sectionRef}>
       <div className="section-header">
         <h2>
-          My <span>Skills</span>
+          <span>Skills</span>
         </h2>
         <div className="underline"></div>
       </div>
