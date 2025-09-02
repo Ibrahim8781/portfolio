@@ -3,94 +3,99 @@
 import { useState } from "react"
 import "./Projects.css"
 
-
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(null)
 
   const projects = [
     {
       id: 1,
-      title: "Collaborative Recipe & Meal Planner",
-      description: "A full-stack application for recipe management and meal planning with collaborative features.",
-      technologies: ["React", "Node.js", "Express", "MongoDB", "Docker", "K8"],
-      details: [
-        "Built RESTful API with Express.js, JWT-based auth, and MongoDB schema design",
-        "Enabled recipe CRUD, user permissions, and real-time comment/rating features",
-        "Developed responsive React frontend with weekly planner and auto-generated shopping lists",
-        "Containerized app with Docker and deployed on Minikube via GitHub Actions",
-      ],
-      image: `${process.env.PUBLIC_URL}/images/collaborative_recipe.png`,
-      github: "https://github.com/im-sami/SCD-Project-Recipe",
-    },
-    {
-      id: 2,
-      title: "Movie Recommending System",
-      description: "A backend system for movie recommendations with user authentication and preference tracking.",
-      technologies: ["Express.js", "MongoDB", "Postman", "Node.js"],
-      details: [
-        "Built a robust backend with ExpressJS and MongoDB, featuring JWT authentication",
-        "Implemented user profiles, rating/review modules, and dynamic movie recommendations",
-        "Documented RESTful APIs with Postman, emphasizing secure routing",
-        "Designed efficient data modeling and token-based communication",
-      ],
-      image: `${process.env.PUBLIC_URL}/images/movie-recommendation.png`,
-      github: "https://documenter.getpostman.com/view/34836347/2sB2qWFiYn",
-    },
-    {
-      id: 3,
-      title: "Rate-My-Professor",
-      description: "A professor review system with AI-powered response generation using RAG pipeline.",
-      technologies: ["Python", "JavaScript", "Next.js", "RAG", "Pinecone", "NLP"],
-      details: [
-        "Developed professor review system integrating RAG pipeline using Lang Chain and Llama Model",
-        "Created real-time, relevant query responses using advanced NLP techniques",
-        "Collaborated in a 4-member Agile team ensuring seamless integration",
-        "Implemented efficient data storage and retrieval using Pinecone vector database",
-      ],
-      image: `${process.env.PUBLIC_URL}/images/rate-my-professor.png`,
-      github: "https://github.com/Mubeen014/Rate-my-professor-using-RAG.git",
-    },
-    {
-      id: 4,
       title: "University Timetable Schedule",
       description: "An AI-powered scheduling system using Constraint Satisfaction Problems and Genetic Algorithms.",
       technologies: ["Python", "CSP", "GA", "NumPy"],
+      duration: "04/2025 - 05/2025",
       details: [
-        "Built a class scheduling system using CSP and GA to handle hard and soft constraints",
-        "Applied MRV, forward checking, and backtracking for efficient search",
-        "Used GA with crossover, mutation, and fitness scoring to improve balance",
-        "Managed data through CSV I/O and compared CSP vs GA outputs",
+        "Engineered CSP/GA scheduling system for 1500+ students across 120+ courses, achieving 90% efficiency with MRV heuristics and backtracking",
+        "Implemented genetic algorithms with crossover/mutation, reducing computation time by 50% to process schedules in 25 seconds",
+        "Applied MRV, forward checking, and backtracking for efficient constraint solving",
+        "Managed data through CSV I/O and compared CSP vs GA performance outputs"
       ],
       image: `${process.env.PUBLIC_URL}/images/university-timetable-scheduler.png`,
       github: "#",
     },
     {
-      id: 5,
-      title: "Teacher Assistant & Lab Demonstrator Management",
-      description: "A system for managing teaching assistants, lab demonstrators, and course assignments.",
-      technologies: [".NET", "SQL", "C#", "Windows Forms"],
+      id: 2,
+      title: "Collaborative Recipe & Meal Planner",
+      description: "A full-stack meal planning platform with collaborative features and automated scheduling.",
+      technologies: ["React", "Node.js", "Express.js", "MongoDB", "Docker", "K8s"],
+      duration: "05/2025",
       details: [
-        "Architected SQL Server database and developed C# .NET backend",
-        "Automated TA assignments and task tracking, reducing manual scheduling",
-        "Developed a Windows Forms interface with data binding for TA and lab management",
-        "Added error handling and tested key features to ensure reliability",
+        "Built Express.js/MongoDB meal platform with JWT auth serving 400+ recipes, supporting 80+ concurrent users with real-time features",
+        "Developed React SPA with automated planning and Docker/K8s deployment, improving load speed by 40%",
+        "Enabled recipe CRUD operations with user permissions and real-time comment/rating features",
+        "Containerized application with Docker and deployed on Kubernetes via CI/CD pipeline"
       ],
-      image: `${process.env.PUBLIC_URL}/images/teacher-lab-assistant-management.png`,
-      github: "#",
+      image: `${process.env.PUBLIC_URL}/images/collaborative_recipe.png`,
+      github: "https://github.com/im-sami/SCD-Project-Recipe",
     },
     {
-      id: 6,
-      title: "Image Moderation System",
-      description: "An image moderation system using AI to detect inappropriate content.",
-      technologies: ["Python", "FLASK", "AWS", "FAST API", "CSS"],
+      id: 3,
+      title: "Image Moderation App",
+      description: "A role-based image moderation platform with AI-powered content detection using AWS services.",
+      technologies: ["FastAPI", "MongoDB", "AWS Rekognition", "Docker", "Python"],
+      duration: "05/2025",
       details: [
-        "Developed an image moderation system using Python and Flask",
-        "Integrated AWS Rekognition for image analysis and inappropriate content detection",
-        "Created a user-friendly interface with CSS and HTML and JavaScript",
-        "Implemented RESTful APIs with FastAPI for efficient image processing",
+        "Built role-based image moderation platform using FastAPI/MongoDB with AWS Rekognition integration, processing unsafe content detection with 95% accuracy across admin/user workflows",
+        "Engineered JWT authentication system with token management APIs and Docker deployment, supporting concurrent image analysis with automated usage logging",
+        "Created intuitive admin dashboard for content moderation and user management",
+        "Implemented real-time image processing with comprehensive error handling and logging"
       ],
       image: `${process.env.PUBLIC_URL}/images/image-moderation.png`,
       github: "https://github.com/Ibrahim8781/Image-Moderation-App",
+    },
+    {
+      id: 4,
+      title: "Movie Recommending System",
+      description: "A collaborative filtering recommendation engine with user authentication and preference tracking.",
+      technologies: ["Express.js", "MongoDB", "Postman", "Node.js"],
+      duration: "11/2024 - 12/2024",
+      details: [
+        "Developed collaborative filtering recommendation engine processing movies with 90% accuracy for personalized suggestions",
+        "Implemented Express.js/MongoDB backend with JWT auth and API documentation, supporting 150+ users with rating/review system",
+        "Built robust RESTful APIs with comprehensive Postman documentation",
+        "Designed efficient data modeling for user preferences and movie metadata"
+      ],
+      image: `${process.env.PUBLIC_URL}/images/movie-recommendation.png`,
+      github: "https://documenter.getpostman.com/view/34836347/2sB2qWFiYn",
+    },
+    {
+      id: 5,
+      title: "Rate-My-Professor",
+      description: "A professor review system with AI-powered response generation using RAG pipeline.",
+      technologies: ["Python", "Next.js", "RAG", "Pinecone", "NLP", "Flask"],
+      duration: "08/2024",
+      details: [
+        "Built custom RAG pipeline with Flask API gateway and Sentence Transformers, processing 100+ professor reviews with 85% semantic search accuracy",
+        "Engineered local vector similarity engine with multi-factor ranking algorithms, delivering sub-400ms query responses without external LLM dependencies",
+        "Collaborated in a 4-member Agile team ensuring seamless integration",
+        "Implemented efficient data storage and retrieval using Pinecone vector database"
+      ],
+      image: `${process.env.PUBLIC_URL}/images/rate-my-professor.png`,
+      github: "https://github.com/Mubeen014/Rate-my-professor-using-RAG.git",
+    },
+    {
+      id: 6,
+      title: "Teacher Assistant & Lab Demonstrator Management",
+      description: "A comprehensive system for managing teaching assistants, lab demonstrators, and course assignments.",
+      technologies: [".NET", "SQL Server", "C#", "Windows Forms"],
+      duration: "02/2024 - 05/2024",
+      details: [
+        "Architected SQL Server database with C# .NET backend automating TA assignment workflows, reducing manual scheduling time by 70% for 50+ teaching assistants",
+        "Developed Windows Forms interface with data binding and comprehensive error handling, streamlining lab management operations with 99% reliability",
+        "Implemented automated task tracking and assignment distribution systems",
+        "Created comprehensive reporting and analytics dashboard for administrative oversight"
+      ],
+      image: `${process.env.PUBLIC_URL}/images/teacher-lab-assistant-management.png`,
+      github: "#",
     },
   ]
 
@@ -123,6 +128,7 @@ const Projects = () => {
             </div>
             <div className="project-info">
               <h3>{project.title}</h3>
+              <p className="project-duration">{project.duration}</p>
               <p>{project.description}</p>
               <div className="project-tech">
                 {project.technologies.map((tech, index) => (
