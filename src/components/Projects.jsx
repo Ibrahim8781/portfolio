@@ -20,7 +20,7 @@ const Projects = () => {
         "Managed data through CSV I/O and compared CSP vs GA performance outputs"
       ],
       image: `${process.env.PUBLIC_URL}/images/university-timetable-scheduler.png`,
-      github: "#",
+      github: "https://github.com/Ibrahim8781/University-TimeTable-Scheduler",
     },
     {
       id: 2,
@@ -65,13 +65,13 @@ const Projects = () => {
         "Designed efficient data modeling for user preferences and movie metadata"
       ],
       image: `${process.env.PUBLIC_URL}/images/movie-recommendation.png`,
-      github: "https://documenter.getpostman.com/view/34836347/2sB2qWFiYn",
+      github: "https://github.com/Ibrahim8781/Movie-Recommendation-Backend",
     },
     {
       id: 5,
       title: "Rate-My-Professor",
       description: "A professor review system with AI-powered response generation using RAG pipeline.",
-      technologies: ["Python", "Next.js", "RAG", "Pinecone", "NLP", "Flask"],
+      technologies: ["Python", "Next.js", "RAG", "Sentence Transformer", "NLP", "Flask"],
       duration: "08/2024",
       details: [
         "Built custom RAG pipeline with Flask API gateway and Sentence Transformers, processing 100+ professor reviews with 85% semantic search accuracy",
@@ -80,7 +80,7 @@ const Projects = () => {
         "Implemented efficient data storage and retrieval using Pinecone vector database"
       ],
       image: `${process.env.PUBLIC_URL}/images/rate-my-professor.png`,
-      github: "https://github.com/Mubeen014/Rate-my-professor-using-RAG.git",
+      github: "https://github.com/Ibrahim8781/Rate-My-Professor-RAG",
     },
     {
       id: 6,
