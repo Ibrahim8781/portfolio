@@ -11,96 +11,88 @@ const Skills = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const hexagons = document.querySelectorAll(".hexagon")
-            hexagons.forEach((hexagon, index) => {
+            const skillCards = document.querySelectorAll(".skill-card")
+            skillCards.forEach((card, index) => {
               setTimeout(() => {
-                hexagon.classList.add("active")
-              }, index * 100)
+                card.classList.add("active")
+              }, index * 50)
             })
           }
         })
       },
-      { threshold: 0.2 },
+      { threshold: 0.1 },
     )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+    const currentRef = sectionRef.current
+    if (currentRef) {
+      observer.observe(currentRef)
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
+      if (currentRef) {
+        observer.unobserve(currentRef)
       }
     }
   }, [])
 
-  const technicalSkills = [
-    { name: "JavaScript", progress: "100%" },
-    { name: "React", progress: "100%" },
-    { name: "Node.js", progress: "100%" },
-    { name: "Express.js", progress: "100%" },
-    { name: "MongoDB", progress: "100%" },
-    { name: "Python", progress: "100%" },
-    { name: "AI/ML", progress: "100%" },
-    { name: "NLP & RAG", progress: "100%" },
-    { name: "Docker", progress: "100%" },
-    { name: "Kubernetes", progress: "100%" },
-    { name: "Git", progress: "100%" },
-    { name: "CI/CD", progress: "100%" },
-  ]
-
-  const otherSkills = [
-    "Git",
-    "REST API",
-    "Docker",
-    "SQL",
-    "Postman",
-    "LLMs",
-    "Heuristic Searching",
-    "CSP",
-    "GA",
-    "NumPy",
-    "Docker",
-    "Kubernetes",
-    "GitHub Actions",
-    "CI/CD",
-    "Agile Methodologies",
-    "Problem Solving",
+  const skillCategories = [
+    {
+      title: "AI & Machine Learning",
+      skills: ["Python", "TensorFlow", "PyTorch", "Sentence Transformers", "FAISS", "CNN", "LSTM", "Deep Learning"]
+    },
+    {
+      title: "RAG & NLP",
+      skills: ["RAG Pipelines", "Qdrant", "Pinecone", "Cohere", "Groq LLMs", "Vector Databases", "Streamlit"]
+    },
+    {
+      title: "Frontend Development",
+      skills: ["React", "Next.js", "JavaScript", "HTML5", "CSS3", "Responsive Design"]
+    },
+    {
+      title: "Backend Development",
+      skills: ["Node.js", "Express.js", "Flask", "FastAPI", "MongoDB", "SQL Server", "REST API"]
+    },
+    {
+      title: "Cloud & DevOps",
+      skills: ["Docker", "Kubernetes", "AWS Rekognition", "CI/CD Pipeline", "Git & GitHub"]
+    },
+    {
+      title: "Programming & Algorithms",
+      skills: ["Python", "JavaScript", "C#", ".NET", "CSP & Genetic Algorithms", "Problem Solving"]
+    },
+    {
+      title: "Tools & Others",
+      skills: ["JWT Authentication", "Postman", "Windows Forms", "Agile Methodologies"]
+    }
   ]
 
   return (
     <section id="skills" className="skills" ref={sectionRef}>
       <div className="section-header">
         <h2>
-          <span>Skills</span>
+          <span>Skills</span> & Technologies
         </h2>
         <div className="underline"></div>
+        <p className="section-description">
+          Technologies and tools I've mastered through real-world projects
+        </p>
       </div>
-      <div className="skills-content">
-        <div className="technical-skills">
-          <h3>Technical Proficiency</h3>
-          <div className="honeycomb">
-            {technicalSkills.map((skill, index) => (
-              <div className="hexagon" key={index}>
-                <div
-                  className="hexagon-fill"
-                  style={{ height: skill.progress }}
-                ></div>
-                <span>{skill.name}<br/></span>
-              </div>
-            ))}
+      <div className="skills-grid">
+        {skillCategories.map((category, index) => (
+          <div className="skill-category" key={index}>
+            <div className="category-header">
+              <span className="category-icon">{category.icon}</span>
+              <h3>{category.title}</h3>
+            </div>
+            <div className="skills-list">
+              {category.skills.map((skill, skillIndex) => (
+                <div className="skill-card" key={skillIndex}>
+                  <span className="skill-name">{skill}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="other-skills">
-          <h3>Additional Skills</h3>
-          <div className="skill-tags">
-            {otherSkills.map((skill, index) => (
-              <div className="skill-tag" key={index}>
-                {skill}
-              </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   )

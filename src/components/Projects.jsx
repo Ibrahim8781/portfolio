@@ -97,6 +97,60 @@ const Projects = () => {
       image: `${process.env.PUBLIC_URL}/images/teacher-lab-assistant-management.png`,
       github: "#",
     },
+    {
+      id: 7,
+      title: "RAG-based FYP Handbook Assistant",
+      description: "A performance retrieval pipeline using Sentence Transformers and FAISS for intelligent handbook queries.",
+      technologies: ["Python", "Sentence-BERT", "FAISS"],
+      duration: "11/2025",
+      details: [
+        "Developed a performance retrieval pipeline using Sentence Transformers and FAISS, processing 50+ handbook pages into contextual chunks with sub-400ms query latency",
+        "Implemented intelligent chunking strategies with metadata retention to deliver context-grounded answers with automated page citations via an interactive Streamlit interface"
+      ],
+      image: `${process.env.PUBLIC_URL}/images/rag-fyp-handbook.png`,
+      github: "https://github.com/Ibrahim8781/RAG-FYP-Handbook-Assistant",
+    },
+    {
+      id: 8,
+      title: "SEOmation - AI Content Generation Platform",
+      description: "A scalable RAG pipeline for automated SEO-optimized content generation.",
+      technologies: ["Express.js", "Flask", "Qdrant", "Cohere", "Groq"],
+      duration: "08/2025 - Present",
+      details: [
+        "Scalable RAG pipeline integrating Qdrant and Cohere embeddings to retrieve real-time context from internet data sources, powering an automated content workflow",
+        "Engineered a Flask-based AI service using Groq LLMs with custom prompt engineering to generate SEO-compliant content, achieving 90%+ optimization scores across multiple publishing platforms"
+      ],
+      image: `${process.env.PUBLIC_URL}/images/seomation.png`,
+      github: "https://github.com/Ibrahim8781/SEOmation",
+    },
+    {
+      id: 9,
+      title: "Sign Language Digit Recognition",
+      description: "A deep CNN for classifying sign language digit gestures with high accuracy.",
+      technologies: ["CNN", "TensorFlow", "Python"],
+      duration: "11/2025",
+      details: [
+        "Designed and trained a deep CNN to classify 64×64 sign-language digit images, achieving high multi-class accuracy across 10 gesture classes",
+        "Performed extensive hyperparameter tuning (batch size, learning rate, epochs, dropout, L1/L2 regularization, early stopping) to improve generalization",
+        "Evaluated performance using confusion matrix, accuracy, precision-recall, and AUC-ROC, with visualizations of training dynamics and sample predictions"
+      ],
+      image: `${process.env.PUBLIC_URL}/images/sign-language-recognition.png`,
+      github: "#",
+    },
+    {
+      id: 10,
+      title: "Next-Word Prediction System",
+      description: "An LSTM-based word prediction model trained on Shakespeare's plays with real-time UI integration.",
+      technologies: ["LSTM", "NLP", "Python", "UI Integration"],
+      duration: "11/2025",
+      details: [
+        "Built a word-level LSTM model trained on Shakespeare's plays to predict the next word in a sentence with coherent linguistic flow",
+        "Analyzed the impact of hyperparameters on sentence fluency and model convergence using training/validation loss and accuracy plots",
+        "Developed a real-time interactive interface that dynamically suggests next-word predictions as users type partial sentences"
+      ],
+      image: `${process.env.PUBLIC_URL}/images/next-word-prediction.png`,
+      github: "#",
+    },
   ]
 
   const toggleProjectDetails = (id) => {

@@ -10,10 +10,11 @@
 }
 
 .header.scrolled {
-  background-color: rgba(15, 15, 26, 0.9);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(11, 17, 32, 0.95);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   padding: 15px 0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .header-container {
@@ -28,12 +29,12 @@
 .logo h1 {
   font-size: 1.8rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
 }
 
 .logo span {
-  color: var(--primary-color);
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -41,7 +42,8 @@
 
 .nav-links ul {
   display: flex;
-  gap: 30px;
+  gap: 35px;
+  align-items: center;
 }
 
 .nav-links li {
@@ -49,7 +51,8 @@
   font-weight: 500;
   cursor: pointer;
   position: relative;
-  transition: var(--transition);
+  transition: var(--transition-fast);
+  color: var(--text-secondary);
 }
 
 .nav-links li:hover {
@@ -63,7 +66,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   transition: var(--transition);
 }
 
@@ -78,12 +81,13 @@
   width: 30px;
   height: 21px;
   cursor: pointer;
+  z-index: 1002;
 }
 
 .menu-toggle .bar {
   height: 3px;
   width: 100%;
-  background-color: var(--text-color);
+  background-color: var(--text-primary);
   border-radius: 10px;
   transition: var(--transition);
 }
@@ -98,16 +102,18 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
+    width: 75%;
+    max-width: 300px;
     height: 100vh;
-    background-color: var(--background-color);
+    background-color: var(--card-bg);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: var(--transition);
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
     z-index: 1001;
+    border-left: 1px solid var(--border-color);
   }
 
   .nav-links.active {
@@ -121,7 +127,8 @@
   }
 
   .nav-links li {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: var(--text-primary);
   }
 
   .menu-toggle.active .bar:nth-child(1) {

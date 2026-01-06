@@ -1,18 +1,58 @@
-/* Base Styles */
+/* ============================================
+   DARK BLUE THEME - EASY ON THE EYES
+   Color Palette: Deep Blues with Bright Accents
+   ============================================ */
+
 :root {
-  --primary-color: #6a11cb;
-  --secondary-color: #2575fc;
-  --dark-purple: #3a0ca3;
-  --light-purple: #7209b7;
-  --accent-color: #f72585;
-  --text-color: #f8f9fa;
-  --background-color: #0f0f1a;
-  --card-bg: #1a1a2e;
-  --border-color: #2a2a40;
-  --success-color: #4bb543;
-  --error-color: #ff3333;
-  --transition: all 0.3s ease;
+  /* Vibrant Accent Colors */
+  --primary-color: #5B8DEF;
+  --secondary-color: #67C3CC;
+  --accent-color: #F4A261;
+  --accent-warm: #E76F51;
+
+  /* Dark Backgrounds */
+  --background-color: #0B1120;
+  --background-alt: #111827;
+  --card-bg: #1A2332;
+  --overlay-bg: rgba(26, 35, 50, 0.95);
+
+  /* Text Colors */
+  --text-primary: #E8EDF4;
+  --text-secondary: #B8C5D6;
+  --text-muted: #8B9AAD;
+  --text-light: #FFFFFF;
+
+  /* Borders & Dividers */
+  --border-color: #2A3749;
+  --border-light: #1F2937;
+
+  /* States */
+  --success-color: #52B788;
+  --error-color: #E63946;
+  --warning-color: #F4A261;
+
+  /* Shadows - Subtle for Dark Theme */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 12px 40px rgba(91, 141, 239, 0.3);
+
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease;
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 5rem;
 }
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
 
 * {
   margin: 0;
@@ -22,19 +62,27 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6;
+  color: var(--text-primary);
+  line-height: 1.7;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-color);
 }
 
 ul {
@@ -44,12 +92,27 @@ ul {
 button {
   cursor: pointer;
   font-family: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  transition: var(--transition);
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
 
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: var(--background-color);
 }
 
 main {
@@ -57,69 +120,124 @@ main {
 }
 
 section {
-  padding: 80px 0;
+  padding: var(--spacing-xl) var(--spacing-md);
+  position: relative;
 }
+
+section:nth-child(even) {
+  background-color: var(--background-alt);
+}
+
+/* Container for content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* ============================================
+   SECTION HEADERS
+   ============================================ */
 
 .section-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: var(--spacing-lg);
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
   position: relative;
   display: inline-block;
+  letter-spacing: -0.5px;
 }
 
 .section-header span {
-  color: var(--primary-color);
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: var(--spacing-sm) auto 0;
+  line-height: 1.6;
 }
 
 .underline {
   height: 4px;
-  width: 70px;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-  margin: 0 auto;
+  width: 60px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  margin: var(--spacing-sm) auto;
   border-radius: 2px;
+  position: relative;
 }
 
+.underline::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: var(--accent-color);
+  border-radius: 50%;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
 .highlight {
-  color: var(--primary-color);
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 600;
 }
 
-/* Loader */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* ============================================
+   LOADER
+   ============================================ */
+
 .loader-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: var(--background-color);
+  background: var(--background-color);
 }
 
 .loader {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-md);
+  gap: 12px;
 }
 
 .loader .circle {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  margin: 0 10px;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-  animation: bounce 1.5s infinite ease-in-out;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  animation: bounce 1.4s infinite ease-in-out;
 }
 
 .loader .circle:nth-child(1) {
@@ -135,37 +253,132 @@ section {
 }
 
 @keyframes bounce {
+
   0%,
+  80%,
   100% {
-    transform: translateY(0);
+    transform: scale(0.8) translateY(0);
+    opacity: 0.5;
   }
-  50% {
-    transform: translateY(-20px);
+
+  40% {
+    transform: scale(1.2) translateY(-20px);
+    opacity: 1;
   }
 }
 
 .loader-container h2 {
   font-size: 1.5rem;
-  color: var(--text-color);
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 600;
 }
 
-/* Responsive */
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
 @media (max-width: 768px) {
   section {
-    padding: 60px 20px;
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .section-header {
+    margin-bottom: var(--spacing-md);
   }
 
   .section-header h2 {
     font-size: 2rem;
   }
+
+  .section-header p {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .section-header h2 {
-    font-size: 1.8rem;
+  html {
+    font-size: 14px;
   }
+
+  section {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
 }
