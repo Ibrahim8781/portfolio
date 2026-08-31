@@ -4,11 +4,8 @@ import { useState, useEffect } from "react"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import About from "./components/About"
-import Skills from "./components/Skills"
-import Experience from "./components/Experiences"
-import Projects from "./components/Projects"
-import Education from "./components/Education"
-import Involvement from "./components/Involvement"
+import WorkTabs from "./components/WorkTabs"
+import CredentialsTabs from "./components/CredentialsTabs"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 import "./App.css"
@@ -20,7 +17,7 @@ function App() {
     // Simulate loading time
     setTimeout(() => {
       setLoading(false)
-    }, 2000)
+    }, 1500)
   }, [])
 
   if (loading) {
@@ -42,11 +39,8 @@ function App() {
       <main>
         <Hero />
         <About />
-        <Skills />
-        <Experience/>
-        <Projects />
-        <Education />
-        <Involvement />
+        <WorkTabs />
+        <CredentialsTabs />
         <Contact />
       </main>
       <Footer />

@@ -12,8 +12,8 @@
   width: 100%;
   height: 100%;
   background:
-    radial-gradient(circle at 15% 25%, rgba(91, 141, 239, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 85% 75%, rgba(103, 195, 204, 0.06) 0%, transparent 50%);
+    radial-gradient(circle at 15% 25%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(129, 140, 248, 0.06) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -77,11 +77,11 @@
 .about-text h3 {
   font-size: 1.8rem;
   margin-bottom: var(--spacing-md);
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary-light), var(--accent-color));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: -0.5px;
 }
 
@@ -90,6 +90,11 @@
   line-height: 1.8;
   color: var(--text-secondary);
   font-size: 1.05rem;
+}
+
+.about-text p strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .about-details {

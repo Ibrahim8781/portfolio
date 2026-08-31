@@ -50,21 +50,20 @@ const About = () => {
           </div>
         </div>
         <div className="about-text">
-          <h3>Software Engineering Student & AI Enthusiast</h3>
+          <h3>Backend & AI Engineer</h3>
           <p>
-            I'm Ibrahim Ahmad Siddiqi, a passionate Software Engineering student at the National University of Computer
-            & Emerging Science (FAST) in Islamabad, Pakistan. I specialize in both full-stack development and artificial
-            intelligence.
+            I'm <strong>Ibrahim Ahmad Siddiqi</strong> — a Backend and AI Engineer with hands-on production
+            experience at Systems Limited and a Research Lab. I specialize in building intelligent backend
+            systems, RAG pipelines, multi-agent orchestration, and scalable full-stack platforms.
           </p>
           <p>
-            With a strong foundation in web technologies like React, Node.js, and Express, combined with my interest in
-            AI/ML and NLP, I develop innovative solutions that bridge the gap between traditional software engineering
-            and artificial intelligence.
+            Proficient in <strong>Python, Node.js/Express.js</strong>, and <strong>REST API design</strong>,
+            with deep experience integrating LLM services (Groq, Gemini, Cohere), vector databases
+            (FAISS, Qdrant, ChromaDB), and AI/ML frameworks into production-grade pipelines.
           </p>
           <p>
-            I'm actively involved in campus communities as a Media Head for the Fast Software Engineering Society and a
-            Media Officer for the Google Developer Student Club, where I contribute to fostering a culture of innovation
-            and learning.
+            Currently completing my <strong>BS in Software Engineering at FAST-NUCES Islamabad (2026)</strong>,
+            actively seeking opportunities to bridge the gap between cutting-edge AI and robust backend engineering.
           </p>
           <div className="about-details">
             <div className="detail">

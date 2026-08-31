@@ -1,41 +1,52 @@
 /* ============================================
-   DARK BLUE THEME - EASY ON THE EYES
-   Color Palette: Deep Blues with Bright Accents
+   PREMIUM DARK THEME — DEEP NAVY + ELECTRIC BLUE
    ============================================ */
 
 :root {
-  /* Vibrant Accent Colors */
-  --primary-color: #5B8DEF;
-  --secondary-color: #67C3CC;
-  --accent-color: #F4A261;
-  --accent-warm: #E76F51;
+  /* Primary Accent — Electric Blue */
+  --primary-color: #3B82F6;
+  --primary-light: #60A5FA;
+  --primary-dark: #2563EB;
 
-  /* Dark Backgrounds */
-  --background-color: #0B1120;
-  --background-alt: #111827;
-  --card-bg: #1A2332;
-  --overlay-bg: rgba(26, 35, 50, 0.95);
+  /* Secondary — Indigo/Violet */
+  --secondary-color: #818CF8;
+  --secondary-light: #A5B4FC;
+  --secondary-dark: #6366F1;
 
-  /* Text Colors */
-  --text-primary: #E8EDF4;
-  --text-secondary: #B8C5D6;
-  --text-muted: #8B9AAD;
+  /* Accent — Cyan glow */
+  --accent-color: #22D3EE;
+  --accent-warm: #F472B6;
+
+  /* Deep navy backgrounds */
+  --background-color: #080D1A;
+  --background-alt: #0D1526;
+  --card-bg: rgba(15, 23, 42, 0.85);
+  --card-bg-solid: #0F172A;
+  --overlay-bg: rgba(8, 13, 26, 0.97);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  /* Text */
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
   --text-light: #FFFFFF;
 
-  /* Borders & Dividers */
-  --border-color: #2A3749;
-  --border-light: #1F2937;
+  /* Borders */
+  --border-color: rgba(59, 130, 246, 0.2);
+  --border-light: rgba(255, 255, 255, 0.06);
 
-  /* States */
-  --success-color: #52B788;
-  --error-color: #E63946;
-  --warning-color: #F4A261;
+  /* Status */
+  --success-color: #34D399;
+  --error-color: #F87171;
+  --warning-color: #FBBF24;
 
-  /* Shadows - Subtle for Dark Theme */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --shadow-hover: 0 12px 40px rgba(91, 141, 239, 0.3);
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.7);
+  --shadow-hover: 0 12px 48px rgba(59, 130, 246, 0.35);
+  --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.2);
 
   /* Transitions */
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -49,6 +60,7 @@
   --spacing-lg: 3rem;
   --spacing-xl: 5rem;
 }
+
 
 /* ============================================
    BASE STYLES
@@ -66,13 +78,17 @@ html {
 }
 
 body {
-  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background-color: var(--background-color);
   color: var(--text-primary);
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Outfit', 'Inter', sans-serif;
 }
 
 a {
@@ -147,16 +163,16 @@ section:nth-child(even) {
 
 .section-header h2 {
   font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: var(--spacing-sm);
   color: var(--text-primary);
   position: relative;
   display: inline-block;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
 }
 
 .section-header span {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-light) 50%, var(--accent-color) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -171,12 +187,13 @@ section:nth-child(even) {
 }
 
 .underline {
-  height: 4px;
-  width: 60px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  height: 3px;
+  width: 80px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   margin: var(--spacing-sm) auto;
   border-radius: 2px;
   position: relative;
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.5);
 }
 
 .underline::after {
@@ -185,10 +202,11 @@ section:nth-child(even) {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background: var(--accent-color);
   border-radius: 50%;
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.8);
 }
 
 /* ============================================

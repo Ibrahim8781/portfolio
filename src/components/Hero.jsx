@@ -7,7 +7,12 @@ const Hero = () => {
   const textRef = useRef(null)
 
   useEffect(() => {
-    const roles = ["Software Engineer", "AI Enthusiast", "Full Stack Developer"]
+    const roles = [
+      "AI Engineer",
+      "Backend Engineer",
+      "Full Stack Developer",
+      "LLM Systems Builder",
+    ]
     let currentRoleIndex = 0
     let currentCharIndex = 0
     let isDeleting = false
@@ -28,17 +33,17 @@ const Hero = () => {
 
       if (!isDeleting && currentCharIndex === currentRole.length) {
         isDeleting = true
-        typingSpeed = 1000 // Pause at the end
+        typingSpeed = 1200
       } else if (isDeleting && currentCharIndex === 0) {
         isDeleting = false
         currentRoleIndex = (currentRoleIndex + 1) % roles.length
-        typingSpeed = 500 // Pause before typing next role
+        typingSpeed = 400
       }
 
       setTimeout(type, typingSpeed)
     }
 
-    setTimeout(type, 1000)
+    setTimeout(type, 800)
   }, [])
 
   const scrollToContact = () => {
@@ -52,13 +57,20 @@ const Hero = () => {
     <section id="hero" className="hero">
       <div className="hero-content">
         <div className="hero-text">
+          <div className="hero-badge">
+            <span className="badge-dot"></span>
+            Available for opportunities
+          </div>
           <h1>
             Hello, I'm <span className="highlight">Ibrahim Ahmad</span>
           </h1>
           <h2>
             I'm a <span ref={textRef} className="typing"></span>
           </h2>
-          <p>Building innovative solutions with modern technologies</p>
+          <p>
+            Building intelligent backend systems and AI-powered applications — from RAG pipelines
+            and multi-agent orchestration to scalable REST APIs and production-grade full-stack platforms.
+          </p>
           <div className="hero-buttons">
             <button className="primary-btn" onClick={scrollToContact}>
               Contact Me
@@ -66,15 +78,21 @@ const Hero = () => {
             <a href="#projects" className="secondary-btn">
               View My Work
             </a>
-            <a href={`${process.env.PUBLIC_URL}/resume/Ibrahim_Ahmad_Siddiqi_Resume.pdf`} download className="secondary-btn">
-              Download Resume
+            <a
+              href={`${process.env.PUBLIC_URL}/resume/Ibrahim_Ahmad_Siddiqi_Resume.pdf`}
+              download
+              className="secondary-btn download-btn"
+            >
+              ↓ Download Resume
             </a>
           </div>
         </div>
         <div className="hero-image">
           <div className="image-container">
             <div className="blob"></div>
-              <img src={`${process.env.PUBLIC_URL}/images/ibrahim-pfp.jpeg`} alt="Ibrahim Ahmad" />
+            <div className="orbit-ring orbit-ring-1"></div>
+            <div className="orbit-ring orbit-ring-2"></div>
+            <img src={`${process.env.PUBLIC_URL}/images/ibrahim-pfp.jpeg`} alt="Ibrahim Ahmad" />
           </div>
         </div>
       </div>

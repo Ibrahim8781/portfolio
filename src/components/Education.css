@@ -1,17 +1,6 @@
 .education {
-  background-color: var(--card-bg);
+  background-color: var(--background-alt);
   position: relative;
-}
-
-.education::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236a11cb' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.05;
 }
 
 .education-content {
@@ -20,33 +9,39 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 40px;
 }
 
+/* Education Card */
 .education-card {
-  background-color: var(--background-color);
-  border-radius: 10px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
   padding: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   display: flex;
   gap: 20px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--glass-border);
+  grid-column: 1 / -1;
+  transition: var(--transition);
+}
+
+.education-card:hover {
+  border-color: var(--border-color);
+  box-shadow: var(--shadow-hover);
 }
 
 .education-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-dark));
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 1.5rem;
-}
-
-.university-icon::before {
-  content: "🎓";
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
 }
 
 .education-details {
@@ -54,10 +49,10 @@
 }
 
 .education-details h3 {
-  font-size: 1.3rem;
-  margin-bottom: 5px;
-  color: var(--primary-color);
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -71,50 +66,79 @@
 }
 
 .location {
-  color: var(--text-color);
-  opacity: 0.8;
+  color: var(--text-muted);
+}
+
+.degree {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.graduation {
+  color: var(--accent-color);
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .courses {
-  margin-top: 15px;
+  margin-top: 16px;
 }
 
 .courses h4 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-bottom: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 600;
 }
 
 .course-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .course-tag {
-  padding: 5px 10px;
-  background: var(--card-bg);
-  border-radius: 15px;
+  padding: 5px 12px;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 20px;
   font-size: 0.8rem;
-  transition: var(--transition);
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+  font-weight: 500;
 }
 
 .course-tag:hover {
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-dark));
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
 }
 
+/* Certifications */
 .certifications {
-  background-color: var(--background-color);
-  border-radius: 10px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
   padding: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--glass-border);
+  transition: var(--transition);
 }
 
-.certifications h3 {
-  font-size: 1.3rem;
-  margin-bottom: 25px;
-  color: var(--primary-color);
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+.certifications:hover {
+  border-color: var(--border-color);
+  box-shadow: var(--shadow-hover);
+}
+
+.certifications h3,
+.involvement h3 {
+  font-size: 1.15rem;
+  margin-bottom: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -122,22 +146,23 @@
 
 .certification-timeline {
   position: relative;
-  padding-left: 30px;
+  padding-left: 28px;
 }
 
 .certification-timeline::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 10px;
+  left: 8px;
   width: 2px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+  opacity: 0.4;
 }
 
 .certification-item {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .certification-item:last-child {
@@ -146,34 +171,127 @@
 
 .certification-dot {
   position: absolute;
-  top: 5px;
-  left: -30px;
-  width: 20px;
-  height: 20px;
+  top: 6px;
+  left: -28px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-dark));
   z-index: 1;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
 }
 
 .certification-content {
-  padding-bottom: 10px;
+  padding-bottom: 6px;
 }
 
 .certification-content h4 {
-  font-size: 1.1rem;
-  margin-bottom: 5px;
+  font-size: 1rem;
+  margin-bottom: 3px;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
-.certification-content p {
-  font-size: 0.9rem;
-  color: var(--text-color);
-  opacity: 0.8;
+.cert-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cert-link:hover {
+  color: var(--primary-light);
+}
+
+.cert-badge-icon {
+  font-size: 0.75rem;
+  color: var(--accent-color);
+  -webkit-text-fill-color: var(--accent-color);
+}
+
+.cert-issuer {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.cert-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Involvement */
+.involvement {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--glass-border);
+  transition: var(--transition);
+}
+
+.involvement:hover {
+  border-color: var(--border-color);
+  box-shadow: var(--shadow-hover);
+}
+
+.involvement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.involvement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(59, 130, 246, 0.04);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  transition: var(--transition-fast);
+}
+
+.involvement-item:hover {
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.involvement-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.involvement-content h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.involvement-content p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.involvement-duration {
+  font-size: 0.78rem;
+  color: var(--text-muted);
 }
 
 /* Responsive */
 @media (max-width: 992px) {
   .education-content {
     grid-template-columns: 1fr;
+  }
+
+  .education-card {
+    grid-column: 1;
   }
 }
 
@@ -184,22 +302,23 @@
   }
 
   .education-icon {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .education-card,
-  .certifications {
+  .certifications,
+  .involvement {
     padding: 20px;
   }
 
   .course-tags {
-    gap: 8px;
+    gap: 6px;
   }
 
   .course-tag {
-    padding: 4px 8px;
+    padding: 4px 10px;
     font-size: 0.75rem;
   }
 }

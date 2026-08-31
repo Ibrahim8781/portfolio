@@ -15,7 +15,7 @@ const Skills = () => {
             skillCards.forEach((card, index) => {
               setTimeout(() => {
                 card.classList.add("active")
-              }, index * 50)
+              }, index * 40)
             })
           }
         })
@@ -37,33 +37,90 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: "AI & Machine Learning",
-      skills: ["Python", "TensorFlow", "PyTorch", "Sentence Transformers", "FAISS", "CNN", "LSTM", "Deep Learning"]
+      title: "AI Engineering",
+      icon: "🤖",
+      skills: [
+        "RAG Pipelines",
+        "Multi-Agent Systems",
+        "LangGraph",
+        "LLM Integration",
+        "Groq",
+        "Gemini API",
+        "Cohere",
+        "Prompt Engineering",
+        "Vector Databases",
+        "FAISS",
+        "Qdrant",
+        "ChromaDB",
+        "Sentence Transformers",
+        "Hugging Face",
+        "NLP",
+      ],
     },
     {
-      title: "RAG & NLP",
-      skills: ["RAG Pipelines", "Qdrant", "Pinecone", "Cohere", "Groq LLMs", "Vector Databases", "Streamlit"]
-    },
-    {
-      title: "Frontend Development",
-      skills: ["React", "Next.js", "JavaScript", "HTML5", "CSS3", "Responsive Design"]
+      title: "ML & Deep Learning",
+      icon: "🧠",
+      skills: [
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "CNN",
+        "LSTM",
+        "Deep Learning",
+        "Scikit-learn",
+        "NumPy",
+        "Streamlit",
+      ],
     },
     {
       title: "Backend Development",
-      skills: ["Node.js", "Express.js", "Flask", "FastAPI", "MongoDB", "SQL Server", "REST API"]
+      icon: "⚙️",
+      skills: [
+        "Python (FastAPI, Flask)",
+        "Node.js",
+        "Express.js",
+        "RESTful API Design",
+        "JWT Authentication",
+        "Rate Limiting",
+        "Web Scraping",
+        "PostgreSQL",
+        "MongoDB",
+        "SQLite",
+      ],
+    },
+    {
+      title: "Frontend Development",
+      icon: "🎨",
+      skills: [
+        "React",
+        "Next.js",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "PyQt6",
+        "Responsive Design",
+      ],
     },
     {
       title: "Cloud & DevOps",
-      skills: ["Docker", "Kubernetes", "AWS Rekognition", "CI/CD Pipeline", "Git & GitHub"]
+      icon: "☁️",
+      skills: [
+        "Docker",
+        "Kubernetes",
+        "AWS Rekognition",
+        "CI/CD Pipeline",
+        "Git & GitHub",
+      ],
     },
     {
-      title: "Programming & Algorithms",
-      skills: ["Python", "JavaScript", "C#", ".NET", "CSP & Genetic Algorithms", "Problem Solving"]
+      title: "Tools & Methods",
+      icon: "🛠️",
+      skills: [
+        "Postman",
+        "Agile / Scrum",
+        "CSP & Genetic Algorithms",
+      ],
     },
-    {
-      title: "Tools & Others",
-      skills: ["JWT Authentication", "Postman", "Windows Forms", "Agile Methodologies"]
-    }
   ]
 
   return (
@@ -74,7 +131,7 @@ const Skills = () => {
         </h2>
         <div className="underline"></div>
         <p className="section-description">
-          Technologies and tools I've mastered through real-world projects
+          From LLM pipelines and vector databases to scalable APIs and full-stack platforms
         </p>
       </div>
       <div className="skills-grid">

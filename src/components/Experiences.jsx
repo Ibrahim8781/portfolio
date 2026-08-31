@@ -9,21 +9,36 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: "Full Stack Engineering Intern",
+      title: "Full-Stack Python Intern",
+      company: "Research Lab",
+      location: "Remote",
+      duration: "06/2026 – 08/2026",
+      department: "Software Engineering",
+      description: "Built EcoTrack — a cross-platform desktop application monitoring system processes and calculating real-time CO₂ emissions using IEA grid carbon-intensity factors.",
+      technologies: ["Python", "PyQt6", "SQLite", "IEA API", "Data Analytics"],
+      achievements: [
+        "Built EcoTrack, a PyQt6 cross-platform desktop app that monitors running system processes and calculates real-time CO₂ emissions using IEA grid carbon-intensity factors",
+        "Implemented historical analytics dashboard and data export functionality for emissions tracking over time",
+        "Delivered across iterative releases, incorporating review feedback across UI, database error handling, and packaging to ship a stable, production-ready build",
+      ],
+      image: `${process.env.PUBLIC_URL}/images/developer-environment.jpg`,
+    },
+    {
+      id: 2,
+      title: "Software Engineering Intern",
       company: "Systems Limited",
       location: "Islamabad, Pakistan",
-      duration: "06/2025 - 08/2025",
+      duration: "06/2025 – 08/2025",
       department: "Digital Consulting",
-      description: "Full-stack development internship focusing on NLP pipelines and document processing systems.",
-      technologies: ["React", "Express.js", "SQLite", "Node.js", "NLP", "RESTful APIs"],
+      description: "Full-stack development internship building production-grade validation systems and LLM-powered tooling for enterprise requirements engineering.",
+      technologies: ["React", "Express.js", "SQLite", "Node.js", "LLMs", "Groq", "RESTful APIs"],
       achievements: [
-        "Built Express.js NLP pipeline processing 500+ requirements documents, reducing manual analysis by 60% through automated artifact generation",
-        "Developed React/Express/SQLite solution with RESTful APIs, serving real-time document verification with sub 300ms response times",
-        "Collaborated with cross-functional teams to deliver enterprise-grade solutions",
-        "Gained hands-on experience with modern full-stack technologies and agile development practices"
+        "Engineered a multi-layer validation engine (AI semantic checks, schema integrity, data normalization) across an Express.js, SQLite, and React stack, refined through iterative review cycles",
+        "Built SPECmate — an automated LLM-powered SRS artifact generator (Llama3-70B via Groq) that auto-produces test cases, use cases, and functional modules from raw requirements documents",
+        "Collaborated with cross-functional teams delivering enterprise-grade solutions using agile development practices",
       ],
       image: `${process.env.PUBLIC_URL}/images/systems-limited-internship.png`,
-    }
+    },
   ]
 
   const toggleExperienceDetails = (id) => {
@@ -41,6 +56,9 @@ const Experience = () => {
           My <span>Experience</span>
         </h2>
         <div className="underline"></div>
+        <p className="section-description">
+          Real-world engineering — from LLM pipelines to desktop apps
+        </p>
       </div>
       <div className="experience-container">
         {experiences.map((experience) => (

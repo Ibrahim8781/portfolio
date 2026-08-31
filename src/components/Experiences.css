@@ -24,18 +24,20 @@
 }
 
 .experience-card {
-  background-color: var(--card-bg);
-  border-radius: 10px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   transition: var(--transition);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--glass-border);
   height: auto;
 }
 
 .experience-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(59, 130, 246, 0.35);
 }
 
 .experience-card.active {
@@ -102,8 +104,8 @@
 .experience-info h3 {
   font-size: 1.3rem;
   margin-bottom: 5px;
-  color: var(--primary-color);
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -173,10 +175,11 @@
 }
 
 .experience-details li::before {
-  content: "•";
+  content: "→";
   position: absolute;
   left: 0;
   color: var(--primary-color);
+  font-weight: bold;
 }
 
 /* Responsive */
