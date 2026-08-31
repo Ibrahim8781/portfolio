@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ibrahim Ahmad Siddiqi - Portfolio & Engineering Report</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm 15mm 15mm 15mm;
+        }
+        
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            color: #1e293b;
+            background-color: #ffffff;
+            line-height: 1.5;
+            font-size: 10.5pt;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 24px 28px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24pt;
+            margin: 0 0 4px 0;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .header .subtitle {
+            font-size: 13pt;
+            color: #818cf8;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px 16px;
+            font-size: 9.5pt;
+            color: #cbd5e1;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        .contact-item a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        /* Section Headings */
+        .section-title {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 2px solid #6366f1;
+            padding-bottom: 4px;
+            margin-top: 22px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title span {
+            color: #6366f1;
+        }
+
+        /* Card Layouts */
+        .card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #6366f1;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .card-title {
+            font-size: 11.5pt;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .card-subtitle {
+            font-size: 10pt;
+            font-weight: 600;
+            color: #4f46e5;
+        }
+
+        .card-meta {
+            font-size: 9pt;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .card-description {
+            font-size: 9.5pt;
+            color: #334155;
+            margin: 6px 0;
+        }
+
+        ul.achievements {
+            margin: 6px 0 6px 18px;
+            padding: 0;
+            font-size: 9.5pt;
+            color: #334155;
+        }
+
+        ul.achievements li {
+            margin-bottom: 4px;
+        }
+
+        /* Tech Tags */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 8px;
+        }
+
+        .tag {
+            background-color: #e0e7ff;
+            color: #3730a3;
+            font-size: 8pt;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .skill-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 10px 12px;
+            page-break-inside: avoid;
+        }
+
+        .skill-box-title {
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: #1e1b4b;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Project Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        /* Education & Certifications */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            page-break-inside: avoid;
+        }
+
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px dashed #cbd5e1;
+            font-size: 9.5pt;
+        }
+
+        .cert-title {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .cert-issuer {
+            font-size: 8.5pt;
+            color: #64748b;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Ibrahim Ahmad Siddiqi</h1>
+        <div class="subtitle">Backend & AI Engineer | LLM Systems & Full-Stack Developer</div>
+        <div class="contact-grid">
+            <div class="contact-item">📧 Email: <a href="mailto:ibrahimsiddiqi12@gmail.com">ibrahimsiddiqi12@gmail.com</a></div>
+            <div class="contact-item">📱 Phone: +(92) 331 5146350</div>
+            <div class="contact-item">📍 Location: Islamabad, Pakistan</div>
+            <div class="contact-item">🔗 GitHub: <a href="https://github.com/Ibrahim8781">github.com/Ibrahim8781</a></div>
+            <div class="contact-item">💼 LinkedIn: <a href="https://linkedin.com/in/ibrahim-ahmad-20355a288">linkedin.com/in/ibrahim-ahmad-20355a288</a></div>
+            <div class="contact-item">🌐 Portfolio: <a href="https://ibrahim8781.github.io/portfolio/">ibrahim8781.github.io/portfolio</a></div>
+        </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <div class="section-title"><span>Executive</span> Summary</div>
+    <div class="card" style="border-left-color: #4f46e5;">
+        <p class="card-description" style="font-size: 10pt; line-height: 1.6; margin: 0;">
+            Backend and AI Engineer with hands-on production experience at <strong>Systems Limited</strong> and a research lab. 
+            Specializing in intelligent backend architectures, RAG pipelines, multi-agent orchestration, and production-grade REST APIs. 
+            Proficient in <strong>Python, Node.js/Express.js, React, FastAPI</strong>, with extensive experience integrating modern LLM models 
+            (Groq, Gemini, Cohere) and vector databases (FAISS, Qdrant, ChromaDB). 
+            Completing BS in Software Engineering at <strong>FAST-NUCES Islamabad (2026)</strong>.
+        </p>
+    </div>
+
+    <!-- Technical Skill Matrix -->
+    <div class="section-title"><span>Technical</span> Skill Matrix</div>
+    <div class="skills-grid">
+        <div class="skill-box">
+            <div class="skill-box-title">🤖 AI & LLM Systems</div>
+            <div class="tech-tags">
+                <span class="tag">RAG Pipelines</span>
+                <span class="tag">Multi-Agent Orchestration</span>
+                <span class="tag">LangGraph</span>
+                <span class="tag">Groq (Llama3)</span>
+                <span class="tag">Gemini API</span>
+                <span class="tag">Cohere</span>
+                <span class="tag">Prompt Engineering</span>
+                <span class="tag">FAISS</span>
+                <span class="tag">Qdrant</span>
+                <span class="tag">ChromaDB</span>
+                <span class="tag">Sentence Transformers</span>
+                <span class="tag">NLP</span>
+            </div>
+        </div>
+
+        <div class="skill-box">
+            <div class="skill-box-title">🧠 ML & Deep Learning</div>
+            <div class="tech-tags">
+                <span class="tag">Python</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">CNN</span>
+                <span class="tag">LSTM</span>
+                <span class="tag">BERT</span>
+                <span class="tag">RoBERTa</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">NumPy</span>
+                <span class="tag">Streamlit</span>
+            </div>
+        </div>
+
+        <div class="skill-box">
+            <div class="skill-box-title">⚙️ Backend Development</div>
+            <div class="tech-tags">
+                <span class="tag">Python (FastAPI, Flask)</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">RESTful API Design</span>
+                <span class="tag">JWT Authentication</span>
+                <span class="tag">Rate Limiting</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">SQLite</span>
+            </div>
+        </div>
+
+        <div class="skill-box">
+            <div class="skill-box-title">🎨 Frontend & DevOps</div>
+            <div class="tech-tags">
+                <span class="tag">React</span>
+                <span class="tag">Next.js</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">PyQt6</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Kubernetes</span>
+                <span class="tag">AWS Rekognition</span>
+                <span class="tag">Git / GitHub</span>
+                <span class="tag">Postman</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Work Experience -->
+    <div class="section-title"><span>Professional</span> Work Experience</div>
+
+    <div class="card">
+        <div class="card-header">
+            <div>
+                <span class="card-title">Full-Stack Python Intern</span>
+                <span class="card-subtitle"> • Research Lab</span>
+            </div>
+            <span class="card-meta">Remote | 06/2026 – 08/2026</span>
+        </div>
+        <ul class="achievements">
+            <li>Engineered <strong>EcoTrack</strong> — a PyQt6 cross-platform desktop application monitoring active system processes and calculating real-time CO₂ emissions using IEA grid carbon-intensity factors.</li>
+            <li>Implemented historical analytics dashboard and data export functionality for emissions tracking over time.</li>
+            <li>Delivered across iterative releases, incorporating review feedback across UI, database error handling (SQLite), and packaging to ship a stable, production-ready build.</li>
+        </ul>
+        <div class="tech-tags">
+            <span class="tag">Python</span>
+            <span class="tag">PyQt6</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">IEA API</span>
+            <span class="tag">Data Analytics</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <div>
+                <span class="card-title">Software Engineering Intern</span>
+                <span class="card-subtitle"> • Systems Limited</span>
+            </div>
+            <span class="card-meta">Islamabad, Pakistan | 06/2025 – 08/2025</span>
+        </div>
+        <ul class="achievements">
+            <li>Engineered a multi-layer validation engine (AI semantic checks, schema integrity, data normalization) across an Express.js, SQLite, and React stack.</li>
+            <li>Built <strong>SPECmate</strong> — an automated LLM-powered SRS artifact generator (Llama3-70B via Groq) auto-producing test cases, use cases, and functional modules from raw requirements.</li>
+            <li>Collaborated with cross-functional digital consulting teams delivering enterprise-grade solutions using agile development practices.</li>
+        </ul>
+        <div class="tech-tags">
+            <span class="tag">React</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">LLMs (Groq / Llama3)</span>
+            <span class="tag">RESTful APIs</span>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Complete Projects Portfolio -->
+    <div class="section-title"><span>Featured</span> Projects Portfolio</div>
+    <div class="projects-grid">
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">1. Multi-Agent AI Orchestration System</span>
+                <span class="card-meta">09/2025 – 11/2025</span>
+            </div>
+            <p class="card-description">Gemini-powered orchestration for a 13-agent educational AI system with two-tier memory and intent dispatch.</p>
+            <ul class="achievements">
+                <li>Co-engineered Gemini-powered orchestration for a 13-agent educational AI system: single-call intent dispatch with confidence scoring and conversational clarification, cutting latency and cost.</li>
+                <li>Added a two-tier memory layer (short-term session recall, per-agent long-term store) for context continuity across multi-turn conversations.</li>
+                <li>Implemented LangGraph state machine for agent routing, tool calling, and graceful fallback handling.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">Gemini API</span><span class="tag">ChromaDB</span><span class="tag">Python</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">2. SEOmation — AI SEO Content Platform</span>
+                <span class="card-meta">08/2025 – 02/2026</span>
+            </div>
+            <p class="card-description">3-service content automation platform with event-driven scheduler, multi-engine research pipeline, and LLM content generator scoring 85+ on SEO tools.</p>
+            <ul class="achievements">
+                <li>Built a 3-service architecture (Express.js/PostgreSQL, Python AI service, React frontend) with automatic repair passes for malformed responses.</li>
+                <li>Event-driven Node.js scheduler with retry/backoff and missed-job recovery for reliable autonomous publishing.</li>
+                <li>Integrated Qdrant vector store and Cohere embeddings to retrieve real-time web context for RAG generation.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tag">Express.js</span><span class="tag">Flask</span><span class="tag">Groq</span><span class="tag">PostgreSQL</span><span class="tag">Qdrant</span><span class="tag">Cohere</span><span class="tag">React</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">3. Detecting AI-Generated vs. Human-Written Text</span>
+                <span class="card-meta">2025</span>
+            </div>
+            <p class="card-description">Transformer-based binary classifier (BERT & RoBERTa) with critical analysis of overfitting vs real-world generalization.</p>
+            <ul class="achievements">
+                <li>Implemented and compared Logistic Regression, BERT (110M params), and RoBERTa (125M params) on HC3 and Kaggle datasets (~10,000 samples).</li>
+                <li>Achieved 99.91% validation accuracy with RoBERTa (AUC-ROC 0.9999). Aggressive regularization produced 97.26% robust generalization accuracy.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tag">Python</span><span class="tag">BERT</span><span class="tag">RoBERTa</span><span class="tag">TensorFlow</span><span class="tag">NLP</span><span class="tag">Hugging Face</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">4. RAG-based FYP Handbook Assistant</span>
+                <span class="card-meta">11/2025</span>
+            </div>
+            <p class="card-description">Performance retrieval pipeline using Sentence Transformers and FAISS for intelligent handbook queries.</p>
+            <ul class="achievements">
+                <li>Processed 50+ handbook pages into contextual chunks with sub-400ms query latency.</li>
+                <li>Intelligent chunking with metadata retention providing context-grounded answers with automated page citations in Streamlit.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tag">Python</span><span class="tag">Sentence-BERT</span><span class="tag">FAISS</span><span class="tag">Streamlit</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">5. Sign Language Digit Recognition</span>
+                <span class="card-meta">11/2025</span>
+            </div>
+            <p class="card-description">Deep CNN for classifying sign language digit gestures across 10 classes.</p>
+            <ul class="achievements">
+                <li>Designed and trained a deep CNN to classify 64×64 sign-language digit images with high multi-class accuracy.</li>
+                <li>Evaluated with confusion matrices, precision-recall, and AUC-ROC curves.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tag">CNN</span><span class="tag">TensorFlow</span><span class="tag">Python</span><span class="tag">Deep Learning</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">6. Collaborative Recipe & Meal Planner</span>
+                <span class="card-meta">05/2025</span>
+            </div>
+            <p class="card-description">Full-stack meal planning platform with collaborative features and automated scheduling.</p>
+            <ul class="achievements">
+                <li>Express.js/MongoDB meal platform with JWT auth serving 400+ recipes & supporting 80+ concurrent users.</li>
+                <li>React SPA containerized with Docker and deployed on Kubernetes via CI/CD pipeline.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">Docker</span><span class="tag">Kubernetes</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">7. Image Moderation App</span>
+                <span class="card-meta">05/2025</span>
+            </div>
+            <p class="card-description">Role-based image moderation platform with AI-powered content detection using AWS Rekognition.</p>
+            <ul class="achievements">
+                <li>FastAPI/MongoDB app with JWT authentication & role separation; AWS Rekognition integration achieving 95% accuracy.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tag">FastAPI</span><span class="tag">MongoDB</span><span class="tag">AWS Rekognition</span><span class="tag">Docker</span><span class="tag">Python</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">8. University Timetable Scheduler</span>
+                <span class="card-meta">04/2025 – 05/2025</span>
+            </div>
+            <p class="card-description">AI scheduling system using Constraint Satisfaction Problems (CSP) & Genetic Algorithms.</p>
+            <ul class="achievements">
+                <li>Engineered CSP/GA scheduler for 1500+ students across 120+ courses, achieving 90% efficiency with MRV heuristics.</li>
+                <li>Reduced computation time by 50% using GA crossover/mutation (25-second execution).</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tag">Python</span><span class="tag">CSP</span><span class="tag">Genetic Algorithms</span><span class="tag">NumPy</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">9. Movie Recommending System</span>
+                <span class="card-meta">11/2024 – 12/2024</span>
+            </div>
+            <p class="card-description">Collaborative filtering recommendation engine with user authentication and preference tracking.</p>
+            <ul class="achievements">
+                <li>Express.js/MongoDB recommendation engine with 90% accuracy for 150+ active users.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">Node.js</span><span class="tag">JWT</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">10. Next-Word Prediction System</span>
+                <span class="card-meta">11/2025</span>
+            </div>
+            <p class="card-description">LSTM-based word prediction model trained on Shakespeare's plays with interactive UI.</p>
+            <ul class="achievements">
+                <li>Word-level LSTM model predicting next words in real-time as users type partial sentences.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tag">LSTM</span><span class="tag">NLP</span><span class="tag">Python</span><span class="tag">TensorFlow</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">11. Rate-My-Professor RAG</span>
+                <span class="card-meta">08/2024</span>
+            </div>
+            <p class="card-description">Professor review system with AI-powered response generation using custom RAG pipeline.</p>
+            <ul class="achievements">
+                <li>Flask API gateway & Sentence Transformers processing 100+ professor reviews with sub-400ms latency.</li>
+            </ul>
+            <div class="tech-tags">
+                <span class="tag">Python</span><span class="tag">Next.js</span><span class="tag">RAG</span><span class="tag">Pinecone</span><span class="tag">Flask</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Education, Certifications & Leadership -->
+    <div class="section-title"><span>Education &</span> Certifications</div>
+    <div class="edu-grid">
+        <div class="skill-box">
+            <div class="skill-box-title">🎓 Education</div>
+            <div style="font-weight: 700; color: #0f172a;">National University of Computer & Emerging Sciences (FAST-NUCES)</div>
+            <div style="font-size: 9pt; color: #64748b;">Islamabad, Pakistan</div>
+            <div style="font-weight: 600; color: #4f46e5; margin-top: 4px;">BS in Software Engineering</div>
+            <div style="font-size: 8.5pt; color: #334155; margin-top: 4px;">Graduation: June 2026</div>
+            <div style="font-size: 8.5pt; font-weight: 600; margin-top: 8px; color: #1e1b4b;">Relevant Coursework:</div>
+            <div class="tech-tags">
+                <span class="tag">Applied AI</span>
+                <span class="tag">Cloud Computing</span>
+                <span class="tag">Web Engineering</span>
+                <span class="tag">DevOps</span>
+                <span class="tag">Software Architecture</span>
+                <span class="tag">Algorithms & Data Structures</span>
+                <span class="tag">Database Systems</span>
+            </div>
+        </div>
+
+        <div class="skill-box">
+            <div class="skill-box-title">📜 Certifications & Leadership</div>
+            <div class="cert-item">
+                <div>
+                    <div class="cert-title">McKinsey Forward Program</div>
+                    <div class="cert-issuer">McKinsey & Company (2026)</div>
+                </div>
+            </div>
+            <div class="cert-item">
+                <div>
+                    <div class="cert-title">AWS Graduate – Cloud Foundations</div>
+                    <div class="cert-issuer">Amazon Web Services (2026)</div>
+                </div>
+            </div>
+            <div class="cert-item">
+                <div>
+                    <div class="cert-title">AWS Graduate – Cloud Web App Builder</div>
+                    <div class="cert-issuer">Amazon Web Services (2026)</div>
+                </div>
+            </div>
+            <div class="cert-item">
+                <div>
+                    <div class="cert-title">AWS Cloud Quest: Cloud Practitioner</div>
+                    <div class="cert-issuer">Amazon Web Services (2026)</div>
+                </div>
+            </div>
+            <div class="cert-item">
+                <div>
+                    <div class="cert-title">Intro to Generative AI for Devs</div>
+                    <div class="cert-issuer">DeepLearning.AI (2025)</div>
+                </div>
+            </div>
+            <div style="font-size: 8.5pt; font-weight: 600; margin-top: 8px; color: #1e1b4b;">Campus Leadership:</div>
+            <div style="font-size: 8.5pt; color: #334155;">
+                • Google Developer Student Club — Technical Workshop Team<br>
+                • FAST Software Engineering Society — Media Head<br>
+                • NASCON — Management Officer
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
