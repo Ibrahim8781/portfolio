@@ -6,10 +6,10 @@ import "./Portfolio.css"
 
 // ─── Domain color system ────────────────────────────────────────────
 const DOMAIN = {
-  "AI & LLMs":    { color: "#B45309", bg: "rgba(180,83,9,0.08)",   border: "#D97706" },
-  "Backend":      { color: "#0F766E", bg: "rgba(15,118,110,0.08)", border: "#0D9488" },
-  "ML Research":  { color: "#7C3AED", bg: "rgba(124,58,237,0.08)", border: "#7C3AED" },
-  "Full Stack":   { color: "#0F766E", bg: "rgba(15,118,110,0.08)", border: "#0D9488" },
+  "AI & LLMs": { color: "#B45309", bg: "rgba(180,83,9,0.08)", border: "#D97706" },
+  "Backend": { color: "#0F766E", bg: "rgba(15,118,110,0.08)", border: "#0D9488" },
+  "ML Research": { color: "#7C3AED", bg: "rgba(124,58,237,0.08)", border: "#7C3AED" },
+  "Full Stack": { color: "#0F766E", bg: "rgba(15,118,110,0.08)", border: "#0D9488" },
 }
 
 // ─── Projects ───────────────────────────────────────────────────────
@@ -138,7 +138,7 @@ const PROJECTS = [
   {
     id: 11, domain: "AI & LLMs", year: "2024",
     title: "Rate-My-Professor RAG",
-    tagline: "Custom RAG pipeline — no external LLM, local vector similarity engine only.",
+    tagline: "Custom RAG pipeline without external LLM, local vector similarity engine only.",
     bullets: [
       "85% semantic search accuracy across 100+ professor reviews; sub-400ms responses",
       "Multi-factor ranking with Sentence Transformers via Flask API gateway",
@@ -158,7 +158,7 @@ const EXPERIENCES = [
     period: "Jun – Aug 2026",
     location: "Remote",
     domain: "Backend",
-    summary: "Built EcoTrack — a cross-platform desktop app monitoring system processes and calculating real-time CO₂ emissions using IEA grid carbon-intensity factors.",
+    summary: "Built EcoTrack: a cross-platform desktop app monitoring system processes and calculating real-time CO₂ emissions using IEA grid carbon-intensity factors.",
     bullets: [
       "Designed end-to-end data pipeline: IEA API polling to SQLite persistence to rolling aggregations to live chart rendering across 30+ country grids, with graceful failure recovery",
       "Built interactive dashboards (time-series trends, source breakdowns, CSV export) and shipped production-ready build via PyInstaller with full documentation",
@@ -183,35 +183,35 @@ const EXPERIENCES = [
 
 // ─── Skills ─────────────────────────────────────────────────────────
 const SKILLS = [
-  { group: "AI & LLMs",  domain: "AI & LLMs",   items: ["LangGraph", "RAG Pipelines", "Gemini API", "Groq", "ChromaDB", "FAISS", "Qdrant", "Multi-Agent Systems", "Prompt Engineering", "Hugging Face", "Cohere"] },
-  { group: "ML & DL",    domain: "ML Research",  items: ["TensorFlow", "PyTorch", "BERT", "RoBERTa", "CNN", "LSTM", "Scikit-learn", "Sentence Transformers", "NumPy"] },
-  { group: "Backend",    domain: "Backend",      items: ["FastAPI", "Flask", "Node.js", "Express.js", "PostgreSQL", "MongoDB", "JWT Auth", "REST APIs", "Docker", "Rate Limiting"] },
-  { group: "Frontend",   domain: "Full Stack",   items: ["React", "Next.js", "JavaScript", "TypeScript", "CSS3", "PyQt6", "Streamlit"] },
+  { group: "AI & LLMs", domain: "AI & LLMs", items: ["LangGraph", "RAG Pipelines", "Gemini API", "Groq", "ChromaDB", "FAISS", "Qdrant", "Multi-Agent Systems", "Prompt Engineering", "Hugging Face", "Cohere"] },
+  { group: "ML & DL", domain: "ML Research", items: ["TensorFlow", "PyTorch", "BERT", "RoBERTa", "CNN", "LSTM", "Scikit-learn", "Sentence Transformers", "NumPy"] },
+  { group: "Backend", domain: "Backend", items: ["FastAPI", "Flask", "Node.js", "Express.js", "PostgreSQL", "MongoDB", "JWT Auth", "REST APIs", "Docker", "Rate Limiting"] },
+  { group: "Frontend", domain: "Full Stack", items: ["React", "Next.js", "JavaScript", "TypeScript", "CSS3", "PyQt6", "Streamlit"] },
 ]
 
 // ─── Certifications ─────────────────────────────────────────────────
 const CERTS = [
-  { title: "McKinsey Forward Program",             issuer: "McKinsey & Company",  date: "Jun 2026", link: "https://www.credly.com/badges/208bf6b8-d538-4fe9-9b5d-69cddfdcba01" },
-  { title: "AWS Academy – Cloud Foundations",      issuer: "Amazon Web Services", date: "Jun 2026", link: "https://www.credly.com/badges/cfd7d8cc-e06d-470c-933e-0236b5fe66a1/public_url" },
-  { title: "AWS Academy – Cloud Web App Builder",  issuer: "Amazon Web Services", date: "May 2026", link: "https://www.credly.com/badges/8b610ee6-d870-4a38-9b63-7a654d16996c/public_url" },
-  { title: "AWS Cloud Quest: Cloud Practitioner",  issuer: "Amazon Web Services", date: "Apr 2026", link: "https://www.credly.com/badges/63403b54-c5ed-42e9-8b85-fb9607c48ec2/public_url" },
+  { title: "McKinsey Forward Program", issuer: "McKinsey & Company", date: "Jun 2026", link: "https://www.credly.com/badges/208bf6b8-d538-4fe9-9b5d-69cddfdcba01" },
+  { title: "AWS Academy – Cloud Foundations", issuer: "Amazon Web Services", date: "Jun 2026", link: "https://www.credly.com/badges/cfd7d8cc-e06d-470c-933e-0236b5fe66a1/public_url" },
+  { title: "AWS Academy – Cloud Web App Builder", issuer: "Amazon Web Services", date: "May 2026", link: "https://www.credly.com/badges/8b610ee6-d870-4a38-9b63-7a654d16996c/public_url" },
+  { title: "AWS Cloud Quest: Cloud Practitioner", issuer: "Amazon Web Services", date: "Apr 2026", link: "https://www.credly.com/badges/63403b54-c5ed-42e9-8b85-fb9607c48ec2/public_url" },
   { title: "Intro to Generative AI for Software Dev", issuer: "DeepLearning.AI", date: "Mar 2025", link: "https://coursera.org/share/3b744adc5fe0d6b8c7a502783de0884a" },
 ]
 
 // ─── Section nav config ─────────────────────────────────────────────
 const SECTIONS = [
-  { id: "experience",     label: "Experience"     },
-  { id: "projects",       label: "Projects"       },
-  { id: "skills",         label: "Skills"         },
-  { id: "certifications", label: "Certs"          },
-  { id: "education",      label: "Education"      },
-  { id: "contact",        label: "Contact"        },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "certifications", label: "Certs" },
+  { id: "education", label: "Education" },
+  { id: "contact", label: "Contact" },
 ]
 
 // ─── Component ──────────────────────────────────────────────────────
 export default function Portfolio() {
   const [domainFilter, setFilter] = useState("All")
-  const [showAll, setShowAll]     = useState(false)
+  const [showAll, setShowAll] = useState(false)
   const [activeSection, setActive] = useState("experience")
 
   // Scroll spy
@@ -231,7 +231,7 @@ export default function Portfolio() {
 
   const FILTERS = ["All", "AI & LLMs", "Backend", "ML Research", "Full Stack"]
   const filtered = domainFilter === "All" ? PROJECTS : PROJECTS.filter(p => p.domain === domainFilter)
-  const visible  = showAll ? filtered : filtered.slice(0, 4)
+  const visible = showAll ? filtered : filtered.slice(0, 4)
 
   return (
     <div className="pf-wrap">
@@ -260,8 +260,8 @@ export default function Portfolio() {
           </div>
 
           <p className="pf-bio">
-            Final-year Software Engineering student at FAST-NUCES building
-            production AI systems — from 13-agent LLM orchestration to
+            Software Engineering graduate from FAST-NUCES building
+            production AI systems, from 13-agent LLM orchestration to
             scalable REST APIs and NLP research.
           </p>
 
@@ -291,7 +291,7 @@ export default function Portfolio() {
           <div className="pf-legend">
             {[
               { key: "AI & LLMs", label: "AI & LLMs" },
-              { key: "Backend",   label: "Backend / Full Stack" },
+              { key: "Backend", label: "Backend / Full Stack" },
               { key: "ML Research", label: "ML Research" },
             ].map(({ key, label }) => (
               <div key={key} className="pf-legend-row">
@@ -486,13 +486,13 @@ export default function Portfolio() {
             <h4 className="pf-involvement-title">Campus Involvement</h4>
             <div className="pf-involvement-list">
               <div className="pf-involvement-item">
-                <strong>Media Head</strong> — Fast Software Engineering Society <span>Aug 2023 – May 2024</span>
+                <strong>Media Head</strong> | Fast Software Engineering Society <span>Aug 2023 – May 2024</span>
               </div>
               <div className="pf-involvement-item">
-                <strong>Media Officer</strong> — Google Developer Student Club <span>Aug 2023 – May 2024</span>
+                <strong>Media Officer</strong> | Google Developer Student Club <span>Aug 2023 – May 2024</span>
               </div>
               <div className="pf-involvement-item">
-                <strong>Management Officer</strong> — NASCON 2024 <span>Mar 2024</span>
+                <strong>Management Officer</strong> | NASCON 2024 <span>Mar 2024</span>
               </div>
             </div>
           </div>
@@ -513,7 +513,7 @@ export default function Portfolio() {
               <FaEnvelope /> ibrahimsiddiqi12@gmail.com
             </a>
             <a href="https://www.linkedin.com/in/ibrahim-ahmad-20355a288/" target="_blank" rel="noopener noreferrer" className="pf-contact-link">
-              <FaLinkedin /> LinkedIn Profile
+              <FaLinkedin /> linkedin.com/in/ibrahim8781
             </a>
             <a href="https://github.com/Ibrahim8781" target="_blank" rel="noopener noreferrer" className="pf-contact-link">
               <FaGithub /> github.com/Ibrahim8781
