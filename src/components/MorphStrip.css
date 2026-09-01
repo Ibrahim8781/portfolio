@@ -1,0 +1,42 @@
+/* ── Domain Morph Strip ── */
+.morph-strip {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 110px;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 32px;
+}
+
+.morph-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.morph-label {
+  position: relative;
+  z-index: 1;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  opacity: 0.4;
+  transition: color 0.8s ease, opacity 0.4s;
+  font-family: "Inter", system-ui, sans-serif;
+  white-space: nowrap;
+}
+
+/* Hide on smaller viewports */
+@media (max-width: 1280px) {
+  .morph-strip { display: none; }
+}

@@ -1,34 +1,21 @@
 "use client"
-
 import { useState, useEffect } from "react"
 import Header from "./components/Header"
-import Hero from "./components/Hero"
-import About from "./components/About"
-import WorkTabs from "./components/WorkTabs"
-import CredentialsTabs from "./components/CredentialsTabs"
-import Contact from "./components/Contact"
-import Footer from "./components/Footer"
+import Portfolio from "./components/Portfolio"
 import "./App.css"
 
 function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Simulate loading time
-    setTimeout(() => {
-      setLoading(false)
-    }, 1500)
+    setTimeout(() => setLoading(false), 800)
   }, [])
 
   if (loading) {
     return (
       <div className="loader-container">
-        <div className="loader">
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-        </div>
-        <h2>Loading Portfolio...</h2>
+        <div className="loader-ring" />
+        <p className="loader-text">Loading</p>
       </div>
     )
   }
@@ -36,14 +23,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <main>
-        <Hero />
-        <About />
-        <WorkTabs />
-        <CredentialsTabs />
-        <Contact />
-      </main>
-      <Footer />
+      <Portfolio />
     </div>
   )
 }
