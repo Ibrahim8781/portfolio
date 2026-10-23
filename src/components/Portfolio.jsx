@@ -17,52 +17,53 @@ const PROJECTS = [
   {
     id: 1, domain: "AI & LLMs", year: "2025",
     title: "Multi-Agent AI Orchestration System",
-    tagline: "Gemini-powered orchestration for a 13-agent educational AI platform.",
+    tagline: "Unified Gemini orchestrator routing student requests across a 13-agent educational AI platform.",
     bullets: [
-      "Single-call intent dispatch with confidence scoring, eliminating per-turn agent-selection overhead vs. round-robin routing",
-      "Two-tier memory: short-term session recall and per-agent long-term store for cross-turn context continuity",
-      "LangGraph state machine handles routing, tool calling, and graceful fallback across all 13 agents",
+      "One Gemini call handles intent detection, parameter extraction, and clarifying questions, cutting latency ~50% (to 0.8-1.2s) and LLM cost ~66%",
+      "Two-tier memory: short-term recall in the supervisor plus per-agent long-term stores (ChromaDB semantic search, SQLite exact match)",
+      "Registry-driven plug-in agents with standard health and process endpoints, health-checked before routing for graceful degradation",
     ],
     metric: "13 agents orchestrated",
-    tags: ["LangGraph", "Gemini API", "FastAPI", "ChromaDB", "Python"],
+    tags: ["Gemini API", "FastAPI", "ChromaDB", "SQLite", "Python"],
     github: "https://github.com/Ibrahim8781/Multi-Agent-System-BSE-7A",
   },
   {
-    id: 2, domain: "Backend", year: "2025–26",
+    id: 2, domain: "Backend", year: "2025-26",
     title: "SEOmation: AI SEO Content Platform",
-    tagline: "3-service content-automation platform: Express.js/PostgreSQL backend, Python AI service, React frontend.",
+    tagline: "3-service content-automation platform: Express.js/PostgreSQL backend, FastAPI AI service, React frontend.",
     bullets: [
-      "Multi-engine research pipeline feeds structured JSON to LLM generator scoring 85+ on SEO tools, with auto repair pass for malformed output",
-      "Event-driven Node.js scheduler with retry/backoff and missed-job recovery for autonomous publishing",
-      "RAG via Qdrant and Cohere embeddings for real-time context-grounded content generation",
+      "Live web search, scraping, and Qdrant RAG feed Gemini (Groq fallback) for platform-specific content, with a repair pass for malformed output",
+      "Scheduler publishes to WordPress, LinkedIn, and Instagram with retry/backoff and missed-job recovery; OAuth tokens AES-256-GCM encrypted",
+      "Built-in SEO scoring (keyword density, meta length, headings, readability) plus multi-provider image generation with fallback",
     ],
-    metric: "85+ SEO score output",
-    tags: ["Express.js", "Flask", "PostgreSQL", "Groq", "Qdrant", "React"],
+    metric: "Publishes to 3 platforms",
+    tags: ["Express.js", "FastAPI", "PostgreSQL", "Gemini", "Groq", "Qdrant", "React"],
     github: "https://github.com/Ibrahim8781/SEOmation",
   },
   {
     id: 3, domain: "ML Research", year: "2025",
     title: "Detecting AI-Generated vs. Human-Written Text",
-    tagline: "BERT (110M) and RoBERTa (125M) classifiers on HC3 + Kaggle dataset (~10,000 samples).",
+    tagline: "Logistic regression baseline, BERT (110M) and RoBERTa (125M) classifiers on the HC3 + Kaggle AI vs. Human corpus.",
     bullets: [
-      "99.91% validation accuracy · AUC-ROC 0.9999 under moderate regularisation (AdamW lr=2e-5, weight decay=0.01)",
-      "Identified dataset-artifact overfitting as the root cause of the real-world accuracy gap via aggressive regularisation (dropout=0.3, gradient clipping)",
+      "99.34% (BERT) and 99.91% (RoBERTa) held-out accuracy, BERT AUC-ROC 0.9999, yet near-chance results on out-of-distribution text",
+      "Traced the gap to dataset-artifact overfitting; aggressive regularisation (dropout=0.3, weight decay=0.05, gradient clipping) traded accuracy (97.26%) for more robust learning",
     ],
-    metric: "99.91% accuracy · AUC-ROC 0.9999",
-    tags: ["BERT", "RoBERTa", "TensorFlow", "NLP", "Hugging Face"],
+    metric: "99.91% RoBERTa accuracy",
+    tags: ["BERT", "RoBERTa", "Hugging Face", "NLP", "Python"],
     github: "#",
   },
   {
     id: 4, domain: "AI & LLMs", year: "2025",
     title: "RAG-based FYP Handbook Assistant",
-    tagline: "Retrieval pipeline over 50+ handbook pages with sub-400ms query latency.",
+    tagline: "Natural-language Q&A over the FAST-NUCES FYP Handbook with page citations, deployed live on Railway.",
     bullets: [
-      "Intelligent chunking with metadata retention — answers include automated page citations",
-      "Streamlit interface for natural-language queries with context-grounded responses",
+      "Sentence-BERT embeddings with FAISS top-5 retrieval (~10ms) ground Llama 3.1 8B answers via Groq, each cited by page number",
+      "Production hardening: embedding cache, three-tier rate limiting, retry with exponential backoff, and structured JSON logging",
     ],
-    metric: "Sub-400ms query latency",
-    tags: ["Python", "Sentence-BERT", "FAISS", "Streamlit"],
+    metric: "~10ms vector retrieval",
+    tags: ["Python", "Sentence-BERT", "FAISS", "Groq", "Streamlit"],
     github: "https://github.com/Ibrahim8781/RAG-FYP-Handbook-Assistant",
+    demo: "https://web-production-5db8b.up.railway.app",
   },
   {
     id: 5, domain: "Full Stack", year: "2025",
@@ -70,10 +71,10 @@ const PROJECTS = [
     tagline: "Express.js/MongoDB meal platform with JWT auth, real-time commenting, and ratings.",
     bullets: [
       "Serves 400+ recipes supporting 80+ concurrent users; automated meal-plan generation via React SPA",
-      "Containerised with Docker, deployed on Kubernetes via CI/CD pipeline — 40% load-speed improvement",
+      "Containerised with Docker and shipped through a CI/CD pipeline, improving load speed by 40%",
     ],
     metric: "80+ concurrent users",
-    tags: ["React", "Node.js", "Express.js", "MongoDB", "Docker", "Kubernetes"],
+    tags: ["React", "Node.js", "Express.js", "MongoDB", "Docker"],
     github: "https://github.com/im-sami/SCD-Project-Recipe",
   },
   {
@@ -85,18 +86,18 @@ const PROJECTS = [
       "Evaluated with confusion matrix, precision-recall curves, and AUC-ROC visualisations of training dynamics",
     ],
     metric: "10-class gesture recognition",
-    tags: ["CNN", "TensorFlow", "Python", "Deep Learning"],
+    tags: ["CNN", "Python", "Deep Learning"],
     github: "#",
   },
   {
     id: 7, domain: "Backend", year: "2025",
     title: "Image Moderation App",
-    tagline: "Role-based FastAPI/MongoDB platform for automated image content moderation.",
+    tagline: "Role-based FastAPI/MongoDB service that flags unsafe images with AWS Rekognition and confidence scores.",
     bullets: [
-      "AWS Rekognition integration for unsafe-content detection at 95% accuracy",
-      "JWT auth with token management APIs, concurrent image analysis, and Docker containerisation",
+      "Admin and user JWT roles: admins issue and revoke tokens, users moderate images; tokens stored in MongoDB so expired ones are rejected",
+      "Per-token usage logging, admin and user web consoles, and one-command Docker Compose deployment",
     ],
-    metric: "95% detection accuracy",
+    metric: "Role-based JWT access",
     tags: ["FastAPI", "MongoDB", "AWS Rekognition", "Docker", "Python"],
     github: "https://github.com/Ibrahim8781/Image-Moderation-App",
   },
@@ -132,7 +133,7 @@ const PROJECTS = [
       "Real-time interactive interface for dynamic word suggestions with coherent linguistic flow",
     ],
     metric: "Shakespearean corpus",
-    tags: ["LSTM", "NLP", "Python", "TensorFlow"],
+    tags: ["LSTM", "NLP", "Python"],
     github: "#",
   },
   {
@@ -155,21 +156,21 @@ const EXPERIENCES = [
     id: 1,
     company: "Research Lab",
     role: "Full-Stack Python Intern",
-    period: "Jun – Aug 2026",
+    period: "Jun - Aug 2026",
     location: "Remote",
     domain: "Backend",
-    summary: "Built EcoTrack: a cross-platform desktop app monitoring system processes and calculating real-time CO₂ emissions using IEA grid carbon-intensity factors.",
+    summary: "Built EcoTrack: a desktop app that tracks per-process CPU, RAM, and GPU power draw and converts it into real-time CO₂ emissions using IEA regional grid factors.",
     bullets: [
-      "Designed end-to-end data pipeline: IEA API polling to SQLite persistence to rolling aggregations to live chart rendering across 30+ country grids, with graceful failure recovery",
-      "Built interactive dashboards (time-series trends, source breakdowns, CSV export) and shipped production-ready build via PyInstaller with full documentation",
+      "Designed the telemetry pipeline: psutil and NVML polling every 5s, energy estimation from CPU TDP and RAM coefficients, and SQLite (WAL) persistence with 30-day retention across 11 regional grids",
+      "Built a PyQt6 dashboard with live charts, hourly to monthly analytics, RAM alerts with one-click process kill, and PDF/CSV export; shipped a packaged Windows build via PyInstaller",
     ],
-    tech: ["Python", "PyQt6", "SQLite", "IEA API", "PyInstaller"],
+    tech: ["Python", "PyQt6", "SQLite", "psutil", "NVML", "PyInstaller"],
   },
   {
     id: 2,
     company: "Systems Limited",
     role: "Software Engineering Intern",
-    period: "Jun – Aug 2025",
+    period: "Jun - Aug 2025",
     location: "Islamabad, Pakistan",
     domain: "Backend",
     summary: "Full-stack internship at Pakistan's largest IT company building production-grade validation systems and LLM-powered tooling for enterprise requirements engineering.",
@@ -183,8 +184,8 @@ const EXPERIENCES = [
 
 // ─── Skills ─────────────────────────────────────────────────────────
 const SKILLS = [
-  { group: "AI & LLMs", domain: "AI & LLMs", items: ["LangGraph", "RAG Pipelines", "Gemini API", "Groq", "ChromaDB", "FAISS", "Qdrant", "Multi-Agent Systems", "Prompt Engineering", "Hugging Face", "Cohere"] },
-  { group: "ML & DL", domain: "ML Research", items: ["TensorFlow", "PyTorch", "BERT", "RoBERTa", "CNN", "LSTM", "Scikit-learn", "Sentence Transformers", "NumPy"] },
+  { group: "AI & LLMs", domain: "AI & LLMs", items: ["LangGraph", "RAG Pipelines", "Gemini API", "Groq", "ChromaDB", "FAISS", "Qdrant", "Multi-Agent Systems", "Prompt Engineering", "Hugging Face"] },
+  { group: "ML & DL", domain: "ML Research", items: ["PyTorch", "BERT", "RoBERTa", "CNN", "LSTM", "Scikit-learn", "Sentence Transformers", "NumPy"] },
   { group: "Backend", domain: "Backend", items: ["FastAPI", "Flask", "Node.js", "Express.js", "PostgreSQL", "MongoDB", "JWT Auth", "REST APIs", "Docker", "Rate Limiting"] },
   { group: "Frontend", domain: "Full Stack", items: ["React", "Next.js", "JavaScript", "TypeScript", "CSS3", "PyQt6", "Streamlit"] },
 ]
@@ -192,8 +193,8 @@ const SKILLS = [
 // ─── Certifications ─────────────────────────────────────────────────
 const CERTS = [
   { title: "McKinsey Forward Program", issuer: "McKinsey & Company", date: "Jun 2026", link: "https://www.credly.com/badges/208bf6b8-d538-4fe9-9b5d-69cddfdcba01" },
-  { title: "AWS Academy – Cloud Foundations", issuer: "Amazon Web Services", date: "Jun 2026", link: "https://www.credly.com/badges/cfd7d8cc-e06d-470c-933e-0236b5fe66a1/public_url" },
-  { title: "AWS Academy – Cloud Web App Builder", issuer: "Amazon Web Services", date: "May 2026", link: "https://www.credly.com/badges/8b610ee6-d870-4a38-9b63-7a654d16996c/public_url" },
+  { title: "AWS Academy: Cloud Foundations", issuer: "Amazon Web Services", date: "Jun 2026", link: "https://www.credly.com/badges/cfd7d8cc-e06d-470c-933e-0236b5fe66a1/public_url" },
+  { title: "AWS Academy: Cloud Web App Builder", issuer: "Amazon Web Services", date: "May 2026", link: "https://www.credly.com/badges/8b610ee6-d870-4a38-9b63-7a654d16996c/public_url" },
   { title: "AWS Cloud Quest: Cloud Practitioner", issuer: "Amazon Web Services", date: "Apr 2026", link: "https://www.credly.com/badges/63403b54-c5ed-42e9-8b85-fb9607c48ec2/public_url" },
   { title: "Intro to Generative AI for Software Dev", issuer: "DeepLearning.AI", date: "Mar 2025", link: "https://coursera.org/share/3b744adc5fe0d6b8c7a502783de0884a" },
 ]
@@ -399,11 +400,18 @@ export default function Portfolio() {
                       {p.tags.map(t => <span key={t} className="pf-tag">{t}</span>)}
                     </div>
 
-                    {p.github && p.github !== "#" && (
+                    {((p.github && p.github !== "#") || p.demo) && (
                       <div className="pf-project-actions">
-                        <a href={p.github} target="_blank" rel="noopener noreferrer" className="pf-gh-link">
-                          GitHub →
-                        </a>
+                        {p.github && p.github !== "#" && (
+                          <a href={p.github} target="_blank" rel="noopener noreferrer" className="pf-gh-link">
+                            GitHub →
+                          </a>
+                        )}
+                        {p.demo && (
+                          <a href={p.demo} target="_blank" rel="noopener noreferrer" className="pf-gh-link">
+                            Live demo →
+                          </a>
+                        )}
                       </div>
                     )}
                   </div>
@@ -474,10 +482,10 @@ export default function Portfolio() {
                 <h3 className="pf-edu-uni">FAST-NUCES, Islamabad</h3>
                 <h4 className="pf-edu-degree">BS Software Engineering</h4>
               </div>
-              <span className="pf-edu-meta">2022 – Jun 2026</span>
+              <span className="pf-edu-meta">2022 - Jun 2026</span>
             </div>
             <div className="pf-exp-tech" style={{ marginTop: "14px" }}>
-              {["Applied AI", "Cloud Computing", "Web Engineering", "DevOps", "Data Structures & Algorithms", "Software Engineering"].map(c => (
+              {["Generative AI", "Applied AI", "Object-Oriented Programming", "Software Design & Architecture", "Data Structures & Algorithms", "Cloud Computing", "Web Engineering", "DevOps", "Software Engineering"].map(c => (
                 <span key={c} className="pf-tag">{c}</span>
               ))}
             </div>
@@ -485,15 +493,17 @@ export default function Portfolio() {
           <div className="pf-involvement">
             <h4 className="pf-involvement-title">Campus Involvement</h4>
             <div className="pf-involvement-list">
-              <div className="pf-involvement-item">
-                <strong>Media Head</strong> | Fast Software Engineering Society <span>Aug 2023 – May 2024</span>
-              </div>
-              <div className="pf-involvement-item">
-                <strong>Media Officer</strong> | Google Developer Student Club <span>Aug 2023 – May 2024</span>
-              </div>
-              <div className="pf-involvement-item">
-                <strong>Management Officer</strong> | NASCON 2024 <span>Mar 2024</span>
-              </div>
+              {[
+                { role: "Media Head", org: "Fast Software Engineering Society", date: "Aug 2023 - May 2024" },
+                { role: "Media Officer", org: "Google Developer Student Club", date: "Aug 2023 - May 2024" },
+                { role: "Management Officer", org: "NASCON 2024", date: "Mar 2024" },
+              ].map(i => (
+                <div key={i.role} className="pf-involvement-item">
+                  <strong>{i.role}</strong>
+                  <span className="pf-involvement-org">{i.org}</span>
+                  <span className="pf-involvement-date">{i.date}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -513,7 +523,7 @@ export default function Portfolio() {
               <FaEnvelope /> ibrahimsiddiqi12@gmail.com
             </a>
             <a href="https://www.linkedin.com/in/ibrahim-ahmad-20355a288/" target="_blank" rel="noopener noreferrer" className="pf-contact-link">
-              <FaLinkedin /> linkedin.com/in/ibrahim8781
+              <FaLinkedin /> LinkedIn Profile
             </a>
             <a href="https://github.com/Ibrahim8781" target="_blank" rel="noopener noreferrer" className="pf-contact-link">
               <FaGithub /> github.com/Ibrahim8781

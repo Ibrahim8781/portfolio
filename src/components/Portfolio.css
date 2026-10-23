@@ -58,25 +58,24 @@ img { display: block; max-width: 100%; }
   height: calc(100vh - 56px);
   width: var(--sidebar-w);
   flex-shrink: 0;
-  overflow-y: auto;
+  overflow: hidden;
   border-right: 1px solid var(--border);
   background: var(--white);
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
 }
 
+/* Spacing scales with viewport height so the sidebar always fits without scrolling */
 .pf-sidebar-inner {
-  padding: 40px 28px 40px;
+  padding: clamp(16px, 3.5vh, 40px) 28px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  min-height: 100%;
+  gap: clamp(8px, 1.8vh, 18px);
+  height: 100%;
 }
 
 /* Photo */
 .pf-photo-wrap {
-  width: 80px;
-  height: 80px;
+  width: clamp(52px, 9vh, 80px);
+  height: clamp(52px, 9vh, 80px);
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--border);
@@ -91,7 +90,7 @@ img { display: block; max-width: 100%; }
 
 /* Name */
 .pf-name {
-  font-size: 1.65rem;
+  font-size: clamp(1.3rem, 3.2vh, 1.65rem);
   font-weight: 900;
   line-height: 1.1;
   color: var(--text);
@@ -137,7 +136,7 @@ img { display: block; max-width: 100%; }
 .pf-bio {
   font-size: 0.82rem;
   color: var(--text-2);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 /* Links */
@@ -428,11 +427,13 @@ img { display: block; max-width: 100%; }
   position: relative;
 }
 .pf-proj-bullets li::before {
-  content: "—";
+  content: "";
   position: absolute;
   left: 0;
-  color: var(--text-3);
-  font-size: 0.75rem;
+  top: 0.8em;
+  width: 7px;
+  height: 1.5px;
+  background: var(--text-3);
 }
 
 /* ═══════════════════════════
@@ -693,13 +694,13 @@ img { display: block; max-width: 100%; }
 .pf-involvement-item {
   font-size: 0.8rem;
   color: var(--text-2);
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  align-items: baseline;
+  gap: 2px 16px;
 }
 .pf-involvement-item strong { color: var(--text); font-weight: 700; }
-.pf-involvement-item span   { color: var(--text-3); font-size: 0.72rem; }
+.pf-involvement-date { color: var(--text-3); font-size: 0.72rem; white-space: nowrap; }
 
 /* ═══════════════════════════
    CONTACT
@@ -747,6 +748,11 @@ img { display: block; max-width: 100%; }
   .pf-snav { display: none; }
 }
 
+/* Short viewports: drop the legend so the rest of the sidebar still fits */
+@media (min-width: 769px) and (max-height: 680px) {
+  .pf-legend { display: none; }
+}
+
 @media (max-width: 1024px) {
   :root { --sidebar-w: 260px; }
   .pf-section { padding: 40px 36px; }
@@ -772,5 +778,7 @@ img { display: block; max-width: 100%; }
   .pf-divider  { margin: 0 16px; }
   .pf-project-header { flex-direction: column; align-items: flex-start; }
   .pf-edu-head { flex-direction: column; }
+  .pf-involvement-item { grid-template-columns: 1fr auto; }
+  .pf-involvement-org  { grid-column: 1 / -1; grid-row: 2; }
   .pf-exp-right { padding-left: 16px; }
 }
