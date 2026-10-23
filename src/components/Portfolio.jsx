@@ -273,7 +273,7 @@ export default function Portfolio() {
             <a href="https://github.com/Ibrahim8781" target="_blank" rel="noopener noreferrer" className="pf-link">
               <FaGithub /> github.com/Ibrahim8781
             </a>
-            <a href="https://www.linkedin.com/in/ibrahim-ahmad-20355a288/" target="_blank" rel="noopener noreferrer" className="pf-link">
+            <a href="https://www.linkedin.com/in/ibrahim8781/" target="_blank" rel="noopener noreferrer" className="pf-link">
               <FaLinkedin /> LinkedIn
             </a>
             <span className="pf-link pf-link-loc">
@@ -494,8 +494,8 @@ export default function Portfolio() {
             <h4 className="pf-involvement-title">Campus Involvement</h4>
             <div className="pf-involvement-list">
               {[
+                { role: "Technical Workshop Team", org: "Google Developer Student Club", date: "Sep 2024 - Apr 2025" },
                 { role: "Media Head", org: "Fast Software Engineering Society", date: "Aug 2023 - May 2024" },
-                { role: "Media Officer", org: "Google Developer Student Club", date: "Aug 2023 - May 2024" },
                 { role: "Management Officer", org: "NASCON 2024", date: "Mar 2024" },
               ].map(i => (
                 <div key={i.role} className="pf-involvement-item">
@@ -522,7 +522,7 @@ export default function Portfolio() {
             <a href="mailto:ibrahimsiddiqi12@gmail.com" className="pf-contact-link">
               <FaEnvelope /> ibrahimsiddiqi12@gmail.com
             </a>
-            <a href="https://www.linkedin.com/in/ibrahim-ahmad-20355a288/" target="_blank" rel="noopener noreferrer" className="pf-contact-link">
+            <a href="https://www.linkedin.com/in/ibrahim8781/" target="_blank" rel="noopener noreferrer" className="pf-contact-link">
               <FaLinkedin /> LinkedIn Profile
             </a>
             <a href="https://github.com/Ibrahim8781" target="_blank" rel="noopener noreferrer" className="pf-contact-link">

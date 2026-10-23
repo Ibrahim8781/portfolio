@@ -695,7 +695,7 @@ img { display: block; max-width: 100%; }
   font-size: 0.8rem;
   color: var(--text-2);
   display: grid;
-  grid-template-columns: 160px 1fr auto;
+  grid-template-columns: 190px 1fr auto;
   align-items: baseline;
   gap: 2px 16px;
 }
